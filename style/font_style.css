@@ -1,0 +1,72 @@
+@font-face {
+font-family: 'Montserrat Regular';
+src: url('../fonts/Montserrat-Regular.eot');
+src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+/*url('../fonts/Montserrat-Regular.woff') format('woff'),*/
+url('../fonts/Montserrat-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Montserrat Medium';
+src: url('../fonts/Montserrat-Medium.eot');
+src: url('../fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+url('../fonts/Montserrat-Medium.woff') format('woff'),
+url('../fonts/Montserrat-Medium.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Montserrat ExtraBold';
+src: url('../fonts/Montserrat-ExtraBold.eot');
+src: url('../fonts/Montserrat-ExtraBold.eot?#iefix') format('embedded-opentype'),
+/*url('../fonts/Montserrat-ExtraBold.woff') format('woff'),*/
+url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Montserrat Black';
+src: url('../fonts/Montserrat-Black.eot');
+src: url('../fonts/Montserrat-Black.eot?#iefix') format('embedded-opentype'),
+url('../fonts/Montserrat-Black.woff') format('woff'),
+url('../fonts/Montserrat-Black.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Lato Bold';
+src: url('../fonts/Lato-Bold.eot');
+src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+/*url('../fonts/Lato-Bold.woff') format('woff'),*/
+url('../fonts/Lato-Bold.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Lato Medium';
+src: url('../fonts/Lato-Medium.eot');
+src: url('../fonts/Lato-Medium.eot?#iefix') format('embedded-opentype'),
+/*url('../fonts/Lato-Medium.woff') format('woff'),*/
+url('../fonts/Lato-Medium.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Lato MediumItalic';
+src: url('../fonts/Lato-MediumItalic.eot');
+src: url('../fonts/Lato-MediumItalic.eot?#iefix') format('embedded-opentype'),
+/*url('../fonts/Lato-MediumItalic.woff') format('woff'),*/
+url('../fonts/Lato-MediumItalic.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Lato Regular';
+src: url('../fonts/Lato-Regular.eot');
+src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+/*url('../fonts/Lato-Regular.woff') format('woff'),*/
+url('../fonts/Lato-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
