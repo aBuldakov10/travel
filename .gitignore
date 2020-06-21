@@ -1,1 +1,6 @@
 .idea/
+node_modules/
+css/
+img/
+es5/
+*.html

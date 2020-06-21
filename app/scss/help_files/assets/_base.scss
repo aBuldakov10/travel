@@ -1,0 +1,79 @@
+// Set box sizing
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+// Base styles
+html,
+body {
+  font-size: $base-font;
+}
+
+body {
+  font-family: $sans;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+a,
+button {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  transition: .2s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: #d800ff;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//Images style
+img {
+  max-width: 100%;
+  height: auto;
+  display: inherit;
+}
+
+// Lists style
+ul, ol, dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Page outer container
+.wrap {
+  padding: 25px 0;
+
+  @include media(min, 1300) {
+    padding: 50px 0 29px;
+  }
+}
+
+// Page inner container
+.container {
+  max-width: 1295px;
+  padding: 0 20px;
+  margin: 0 auto;
+}

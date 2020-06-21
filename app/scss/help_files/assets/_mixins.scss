@@ -1,0 +1,50 @@
+// Centering block
+@mixin centering ($coordinate) {
+
+  @if $coordinate == 'xy' {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $coordinate == 'x' {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $coordinate == 'y' {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// Pseudo elements (:before, :after)
+@mixin pseudo ($content: '', $display: block, $position: absolute) {
+  content: $content;
+  display: $display;
+  position: $position;
+}
+
+// Media queries
+@mixin media ($extremum, $width) {
+
+  @if $extremum == 'min' {
+    @media only screen and (min-width: $width + 'px') {
+      @content
+    }
+  }
+
+  @if $extremum == 'max' {
+    @media only screen and (max-width: $width + 'px') {
+      @content
+    }
+  }
+}
+
+//Font size
+@mixin font-size ($size) {
+  font-size: ($size/16)*1rem;
+}
