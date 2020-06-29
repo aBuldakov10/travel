@@ -20,6 +20,10 @@ body {
 a,
 button {
   outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 a {
@@ -27,7 +31,6 @@ a {
   transition: .2s ease;
 
   &:hover {
-    cursor: pointer;
     color: #d800ff;
   }
 }

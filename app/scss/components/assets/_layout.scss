@@ -1,0 +1,62 @@
+section {
+  font-family: $montserrat;
+  position: relative;
+  padding: 70px 0 80px;
+}
+
+.start-section {
+  background: url('/img/start-bg-XL.jpg') no-repeat center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.start-section-greating {
+  max-width: 760px;
+  color: $light-txt;
+  text-align: center;
+  @include centering(xy);
+
+  h1 {
+    @include font-size(74);
+    text-transform: capitalize;
+    letter-spacing: .3px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    @include font-size(40);
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    margin-bottom: 35px;
+  }
+
+  p {
+    @include font-size(18);
+    margin-bottom: 50px;
+    letter-spacing: .5px;
+    line-height: 1.55;
+  }
+
+  button {
+    font-family: $montserrat;
+    font-weight: $medium;
+    @include font-size(15);
+    text-transform: uppercase;
+    background-image: linear-gradient(to bottom, #f9e03b, #f5dd3a, #f2d93a, #eed639, #ebd338);
+    box-shadow:
+      inset rgba(0,0,0,.6) 0 -3px 8px,
+      inset rgba(252,255,255,.7) 0 3px 8px,
+      rgba(0,0,0,.8) 0 3px 8px -3px;
+    border-radius: 7px;
+    border: 0;
+
+    &:hover {
+      background-image: linear-gradient(to bottom, #fae352, #f7e051, #f4dd51, #f1db50, #eed84f);
+    }
+  }
+}
+
+.start-btn {
+  width: 215px;
+  height: 55px;
+}
