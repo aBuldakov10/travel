@@ -1,7 +1,25 @@
 // Fonts
+// ------- Default font -------
 $sans: 'Roboto', sans-serif;
+
+// ------- Custom fonts -------
+$montserrat: 'Montserrat', $sans;
+$lato: 'Lato', $sans;
 
 // Fonts sizes
 $base-font: 16px;
 
+// Fonts weight
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$extra-bold: 800;
+$black: 900;
+
 //Colors
+$primary: #f9e03b;
+$secondary: #00a4ff;
+$dark-txt: #000;
+$light-txt: #fff;
+$placeholder: #7e7e7e;
+$icon-color: #373737;
