@@ -18,7 +18,8 @@ body {
 }
 
 a,
-button {
+button,
+input[type='submit'] {
   outline: none;
 
   &:hover {

@@ -1,1 +1,20 @@
-p search section
+section.search-section
+  .container
+    h3.search-title find hotels
+    form.search-form
+      label
+        p.form-item-title where
+        input.location(type="text" placeholder='location' maxlength='15')
+      label
+        p.form-item-title check in
+        input.period(type="text" placeholder='dd-mm-yyyy' maxlength='15')
+      label
+        p.form-item-title check out
+        input.period(type="text" placeholder='dd-mm-yyyy' maxlength='15')
+      label
+        p.form-item-title adult
+        input.persons-numb(type="text" placeholder='01' maxlength='15')
+      label
+        p.form-item-title child
+        input.persons-numb(type="text" placeholder='00' maxlength='15')
+      input.search-btn(type='submit' value='click here')

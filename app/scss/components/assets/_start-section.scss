@@ -1,0 +1,38 @@
+.start-section {
+  background: url('/img/start-bg-XL.jpg') no-repeat center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.start-section-greating {
+  max-width: 760px;
+  color: $light-txt;
+  text-align: center;
+  @include centering(xy);
+
+  h1 {
+    @include font-size(74);
+    text-transform: capitalize;
+    letter-spacing: .3px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    @include font-size(40);
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    margin-bottom: 35px;
+  }
+
+  p {
+    @include font-size(18);
+    margin-bottom: 50px;
+    letter-spacing: .5px;
+    line-height: 1.55;
+  }
+}
+
+.start-btn {
+  width: 215px;
+  height: 55px;
+}

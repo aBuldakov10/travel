@@ -4,13 +4,16 @@ html(lang='en')
   body
     include components/_header
     main
-      section.start-section
-        .start-section-greating
-          h1 start your greatest
-          h2 adventure with us!
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia suscipit veleos repellat obcaecati non
-            |laborum explicabo cupiditate fugiat. Corrupti
-          button.start-btn click here
+      include components/_start-section
       include components/_search
+      include components/_about
+      include components/_services
+      include components/_budget-packages
+      include components/_tour-status
+      include components/_best-deals
+      include components/_blog
+      include components/_slide-show
+      include components/_customer-reviews
     footer
+      include components/_footer
     include meta_files/_footer_scripts
