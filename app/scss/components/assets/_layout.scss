@@ -4,6 +4,27 @@ section {
   padding: 70px 0 80px;
 }
 
+.desc-txt {
+  font-family: $lato;
+  @include font-size(18);
+  letter-spacing: .5px;
+  line-height: 1.55;
+
+  li {
+    position: relative;
+    margin-bottom: 25px;
+
+    &:before {
+      @include pseudo("\f058");
+      left: 0;
+      top: -10px;
+      font-family: FontAwesome;
+      @include font-size(30);
+      color: $secondary;
+    }
+  }
+}
+
 button,
 input {
   border: 0;
@@ -39,9 +60,18 @@ button {
   }
 }
 
-h3 {
-  font-weight: $black;
+h3, h4 {
   @include font-size(37);
   text-transform: capitalize;
+  text-align: center;
+}
+
+h3 {
+  font-weight: $black;
   margin-bottom: 25px;
+}
+
+h4 {
+  font-weight: $medium;
+  margin-bottom: 60px;
 }

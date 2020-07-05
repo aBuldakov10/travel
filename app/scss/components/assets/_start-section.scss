@@ -25,10 +25,7 @@
   }
 
   p {
-    @include font-size(18);
     margin-bottom: 50px;
-    letter-spacing: .5px;
-    line-height: 1.55;
   }
 }
 

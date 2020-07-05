@@ -1,0 +1,73 @@
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service-list-item {
+  width: 50%;
+  padding: 0 40px 0 110px;
+  position: relative;
+  margin-bottom: 50px;
+
+  &:nth-child(even) {
+    padding-right: 0;
+  }
+
+  &:nth-last-child(-n+2) {
+    margin-bottom: 20px;
+  }
+}
+
+.service-list-txt {
+  &:before {
+    @include pseudo();
+    left: 10px;
+    top: -3px;
+    font-family: FontAwesome;
+    @include font-size(55);
+    color: $secondary;
+  }
+}
+
+#plane {
+  &:before {
+    content: "\f072";
+  }
+}
+
+#train {
+  &:before {
+    content: "\f238";
+  }
+}
+
+#hotel {
+  &:before {
+    content: "\f19c";
+  }
+}
+
+#bike {
+  &:before {
+    content: "\f206";
+  }
+}
+
+#cultery {
+  &:before {
+    content: "\f0f5";
+  }
+}
+
+#eye {
+  &:before {
+    content: "\f06e";
+  }
+}
+
+.title-txt {
+  font-weight: 500;
+  @include font-size(22);
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
