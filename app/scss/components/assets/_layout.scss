@@ -75,3 +75,38 @@ h4 {
   font-weight: $medium;
   margin-bottom: 60px;
 }
+
+.grid-block {
+  max-width: 1255px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  position: relative;
+}
+
+.grid-item {
+  margin: 0 5px;
+  padding: 30px 10px 20px;
+  max-width: 380px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 0 5px 0 #adadad;
+  position: relative;
+}
+
+.btm-block {
+  height: 255px;
+  width: 100%;
+  background: $secondary;
+  position: absolute;
+  bottom: 0;
+}
+
+// for best dials and blog
+.class {
+  @extend .grid-item;
+  overflow: hidden;
+}

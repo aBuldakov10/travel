@@ -1,0 +1,65 @@
+.budget-section {
+  background: url("/img/budget-bg-XL.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+.budget-title {
+  @include font-size(24);
+  font-weight: $extra-bold;
+  text-transform: capitalize;
+
+  &:before {
+    @include pseudo('', block, relative);
+    font-family: FontAwesome;
+    color: $icon-color;
+    @include font-size(70);
+    margin-bottom: 25px;
+  }
+}
+
+#low {
+  &:before {
+    content: "\f1b9";
+  }
+}
+
+#mid {
+  &:before {
+    content: "\f238";
+  }
+}
+
+#high {
+  &:before {
+    content: "\f072";
+  }
+}
+
+.budget-price {
+  @include font-size(30);
+  font-weight: $medium;
+  margin: 20px 0 30px;
+  padding: 15px 0;
+  text-align: center;
+  background: $primary;
+  width: 110%;
+  position: relative;
+  left: -18px;
+}
+
+.budget-lst {
+  margin-bottom: 15px;
+  font-family: $lato;
+  @include font-size(17);
+  letter-spacing: .5px;
+
+  li {
+    &:before {
+      content: '\f058';
+      margin-right: 15px;
+      font-family: FontAwesome;
+      @include font-size(17);
+      color: $secondary;
+    }
+  }
+}

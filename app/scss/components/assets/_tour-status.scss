@@ -1,0 +1,65 @@
+.status-section,
+.status-line,
+.status-line-item {
+  display: flex;
+}
+
+.status-section button {
+  margin-top: 60px;
+}
+
+.status-line {
+  border: 2px solid $secondary;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
+  clip-path: polygon(96.2% 0%, 100% 50%, 96.2% 100%, 0 100%, 0 50%, 0 0);
+  background: $secondary;
+}
+
+.status-line-item {
+  width: 35.7%;
+  height: 100%;
+  clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 50%, 0 0);
+  align-items: center;
+  @include font-size(22);
+  font-weight: $medium;
+  text-transform: capitalize;
+
+  p {
+    &:before {
+      @include pseudo();
+      @include font-size(44);
+    }
+  }
+}
+
+.fly {
+  z-index: 2;
+  background: $secondary;
+
+  p:before {
+    content: "\f072";
+  }
+}
+
+.cab {
+  z-index: 1;
+  background: $inactive-status;
+  margin-left: -4%;
+
+  p:before {
+    content: '\f1b9';
+  }
+}
+
+.hotel {
+  background: #fff;
+  margin-left: -4%;
+
+  p:before {
+    content: '\f19c';
+  }
+}
