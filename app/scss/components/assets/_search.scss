@@ -18,7 +18,7 @@
 
     &[type='text'] {
       @include font-size(17);
-      padding-left: 20px;
+      padding: 0 0 0 20px;
       outline: none;
 
       &:focus {
@@ -52,7 +52,7 @@
 
 .search-btn {
   width: 190px;
-  margin-left: 40px;
+  margin: 0 0 0 40px;
   align-self: flex-end;
   background: $send-form-color;
   color: $light-txt;
