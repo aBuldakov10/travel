@@ -34,7 +34,7 @@ gulp.task('sass', function () { // Создаем таск sass
 });
 
 gulp.task('pictures-min', function () { // Минимизация изображений
-  return gulp.src('app/pictures/*.*')
+  return gulp.src('app/pictures/**/*.*')
     .pipe(imagemin())
     .pipe(gulp.dest('app/img'))
     .pipe(browserSync.reload({stream: true}))

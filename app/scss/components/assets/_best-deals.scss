@@ -1,3 +1,43 @@
-.class {
+.best-deals {
+  background: url("/img/deals/deals-bg-XL.jpg") fixed;
+}
 
+.extended-grid-item {
+  @extend .grid-item;
+  overflow: hidden;
+}
+
+.grid-item-container {
+  padding: 18px 15px 20px;
+  height: calc(100% - 268px);
+  position: relative;
+}
+
+.deal-duration {
+  @include font-size(20);
+  font-weight: $medium;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+}
+
+.deal-rout {
+  @include font-size(28);
+  font-weight: $black;
+  text-transform: capitalize;
+}
+
+.deal-desc {
+  @extend .desc-txt;
+  margin: 15px 0 110px;
+}
+
+.book-now-block {
+  @include centering(x);
+  bottom: 20px;
+}
+
+.deal-price {
+  @include font-size(30);
+  font-weight: $black;
+  margin: 0 0 20px;
 }

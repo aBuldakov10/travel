@@ -3,6 +3,14 @@
   background-size: cover;
 }
 
+.budget-item {
+  padding: 30px 10px 20px;
+  width: 100%;
+  @extend .grid-item;
+  //position: relative;
+}
+
+
 .budget-title {
   @include font-size(24);
   font-weight: $extra-bold;
@@ -48,9 +56,7 @@
 
 .budget-lst {
   margin: 114px 0 15px;
-  font-family: $lato;
-  @include font-size(17);
-  letter-spacing: .5px;
+  line-height: inherit;
 
   li {
     &:before {

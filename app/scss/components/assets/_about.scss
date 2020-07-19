@@ -10,12 +10,12 @@
   min-height: 619px;
 }
 
-.train {
-  background-image: url("/img/train-XL.jpg");
+.left-pic {
+  background-image: url("/img/about/left-side-XL.jpg");
 }
 
-.train-side {
-  background-image: url("/img/train-side-XL.jpg");
+.right-pic {
+  background-image: url("/img/about/right-side-XL.jpg");
 }
 
 .column {
@@ -33,11 +33,21 @@
     margin: 0 0 40px;
   }
 
-  ul.desc-txt {
+  ul {
     margin: 45px 0 0;
+  }
+}
 
-    li {
-      padding: 0 0 0 50px;
-    }
+.about-list-item {
+  position: relative;
+  margin: 0 0 25px;
+  padding: 0 0 0 50px;
+
+  &:before {
+    @include pseudo("\f058");
+    left: 0;
+    top: -5px;
+    @include font-size(30);
+    color: $secondary;
   }
 }
