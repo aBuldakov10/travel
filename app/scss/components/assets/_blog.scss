@@ -1,3 +1,21 @@
-.class {
+.blog {
+  background: url("/img/blog/blog-bg-XL.jpg") fixed;
+}
 
+.blog-btn {
+  @extend .grid-btn;
+  @include centering(x);
+  top: 230px;
+}
+
+.blog-title {
+  @include font-size(25);
+  font-weight: $black;
+  text-transform: capitalize;
+  margin: 0 0 18px;
+}
+
+.blog-container {
+  padding: 0 15px;
+  margin: 60px 0 40px;
 }
