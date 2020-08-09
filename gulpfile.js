@@ -12,7 +12,7 @@ const gulp = require('gulp'), // Подключаем Gulp
   imagemin = require('gulp-imagemin'), // Сжатие изображение
   uglifyJS = require('gulp-uglify'), // Минимизация js
   babel = require('gulp-babel'), // Преобразование es6 в es5
-  sourcemaps = require('gulp-sourcemaps'),
+  sourcemaps = require('gulp-sourcemaps'), // Добавление карты сайта
   clean = require('gulp-clean'), // Очистить сборочную директорию
   browserSync = require('browser-sync'); // Подключаем Browser Sync
 
@@ -26,9 +26,11 @@ gulp.task('pug', function () { // Создаем таск pug
 
 gulp.task('sass', function () { // Создаем таск sass
   return gulp.src('./app/scss/**/*.scss') // Берем источник
-    .pipe(sass()) // Преобразуем sass в css посредством gulp-sass
+    .pipe(sourcemaps.init()) // Инициализация создания Source Maps
+    .pipe(sass({ outputStyle: 'expanded' })) // Преобразуем sass в css посредством gulp-sass
     .pipe(postcss([unprefix(), autoprefixer(), mqpacker({ sort: true })])) // Поставить префиксы, перенести
     // медиа запросы в конец файла
+    .pipe(sourcemaps.write('.')) // Путь для записи SourceMaps
     .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
     .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });

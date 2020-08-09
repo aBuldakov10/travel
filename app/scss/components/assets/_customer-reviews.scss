@@ -1,13 +1,45 @@
 .customer-reviews-bg {
-  background: url("/img/reviews/reviews-bg-XL.jpg") fixed;
+  background: url("/img/reviews/reviews-bg-XL.jpg") no-repeat center fixed;
+  background-size: cover;
   color: $light-txt;
 }
 
-.stars {
+.customer-slider-item {
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+.customer-slider-item-txt {
+  @extend .desc-txt;
+  text-align: center;
+}
+
+.customer-slider-item-stars {
+  margin: 30px auto 60px;
   color: $primary;
   @include font-size(22);
   max-width: 170px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.customer-slider-item-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    margin: 0 20px 0 0;
+  }
+
+  p {
+    text-transform: capitalize;
+  }
+}
+
+.customer-slider-item-title {
+  @include font-size(25);
+  font-weight: 900;
+  margin: 0 0 5px;
 }

@@ -1,0 +1,28 @@
+.footer-bg {
+  background: url("/img/contact-us-bg-XL.png") no-repeat center;
+  background-size: cover;
+  padding-top: 140px;
+  min-height: 460px;
+  color: #fff;
+  position: relative;
+}
+
+.footer-marker {
+  @include font-size(206);
+  color: $primary;
+  @include centering(x);
+  //top: 312px;
+}
+
+.footer-contacts {
+  padding: 90px 0 80px;
+}
+
+.main-contacts {
+  max-width: 1025px;
+  margin:  0 auto;
+}
+
+.footer-copyright {
+  min-height: 50px;
+}

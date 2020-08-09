@@ -1,5 +1,6 @@
 .blog {
-  background: url("/img/blog/blog-bg-XL.jpg") fixed;
+  background: url("/img/blog/blog-bg-XL.jpg") no-repeat center fixed;
+  background-size: cover;
 }
 
 .blog-btn {
