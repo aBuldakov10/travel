@@ -18,12 +18,12 @@
 }
 
 .status-line-item {
-  width: 35.7%;
-  clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 50%, 0 0);
-  align-items: center;
   @include font-size(22);
   font-weight: $medium;
   text-transform: capitalize;
+  width: 35.7%;
+  clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 50%, 0 0);
+  align-items: center;
 
   p {
     margin: 0 0 0 30px;
@@ -40,8 +40,8 @@
 }
 
 .fly {
-  z-index: 2;
   background: $secondary;
+  z-index: 2;
 
   p:before {
     content: "\f072";
@@ -57,9 +57,9 @@
 }
 
 .cab {
-  z-index: 1;
   background: $inactive-status;
   margin: 0 0 0 -4%;
+  z-index: 1;
 
   p:before {
     content: '\f1b9';

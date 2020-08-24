@@ -9,16 +9,16 @@
 }
 
 .grid-item-container {
+  position: relative;
   padding: 18px 15px 20px;
   height: calc(100% - 268px);
-  position: relative;
 }
 
 .deal-duration {
   @include font-size(20);
   font-weight: $medium;
-  text-transform: capitalize;
   margin: 0 0 10px;
+  text-transform: capitalize;
 }
 
 .deal-rout {

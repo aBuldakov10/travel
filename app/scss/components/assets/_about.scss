@@ -45,9 +45,9 @@
 
   &:before {
     @include pseudo("\f058");
-    left: 0;
-    top: -5px;
     @include font-size(30);
+    top: -5px;
+    left: 0;
     color: $secondary;
   }
 }

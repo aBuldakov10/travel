@@ -4,9 +4,9 @@
 }
 
 .budget-item {
+  @extend .grid-item;
   padding: 30px 10px 20px;
   width: 100%;
-  @extend .grid-item;
 }
 
 
@@ -16,9 +16,9 @@
   text-transform: capitalize;
 
   &:before {
+    @include font-size(70);
     @include pseudo('', block, relative);
     color: $icon-color;
-    @include font-size(70);
     margin: 0 0 25px;
   }
 }
@@ -44,13 +44,13 @@
 .budget-price {
   @include font-size(30);
   font-weight: $medium;
-  margin: 20px 0 30px;
-  padding: 15px 0;
   text-align: center;
-  background: $primary;
-  width: 104%;
   position: absolute;
   left: -7px;
+  margin: 20px 0 30px;
+  padding: 15px 0;
+  background: $primary;
+  width: 104%;
 }
 
 .budget-lst {
@@ -60,10 +60,10 @@
   li {
     &:before {
       content: '\f058';
-      margin-right: 15px;
-      font-family: FontAwesome;
       @include font-size(17);
+      font-family: FontAwesome;
       color: $secondary;
+      margin-right: 15px;
     }
   }
 }

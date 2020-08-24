@@ -1,4 +1,15 @@
 // General styles
+html,
+body {
+  $base-font: 12;
+  font-size: $base-font+px;
+
+  @include media(min, 768) {
+    $base-font: 16;
+    font-size: $base-font+px;
+  }
+}
+
 section {
   font-family: $montserrat;
   position: relative;
@@ -6,17 +17,17 @@ section {
 }
 
 .desc-txt {
-  font-family: $lato;
   @include font-size(18);
+  font-family: $lato;
   letter-spacing: .5px;
   line-height: 1.55;
 }
 
 button,
 input {
+  font-weight: $medium;
   border: 0;
   border-radius: 5px;
-  font-weight: $medium;
 }
 
 button,
@@ -35,6 +46,7 @@ input[type='submit'] {
 }
 
 button {
+  padding: 0;
   background-image: linear-gradient(to bottom, #f9e03b, #f5dd3a, #f2d93a, #eed639, #ebd338);
 
   &:hover {
@@ -69,33 +81,33 @@ h4 {
 }
 
 .grid-block {
+  position: relative;
   max-width: 1255px;
   margin: 0 auto 20px;
   display: flex;
   justify-content: space-between;
   z-index: 1;
-  position: relative;
 }
 
 .grid-item {
+  position: relative;
   max-width: 380px;
   border-radius: 10px;
   background: #fff;
   text-align: center;
   box-shadow: 0 0 5px 0 #adadad;
-  position: relative;
 }
 
 .btm-block {
-  height: 255px;
-  width: 100%;
-  background: $secondary;
   position: absolute;
   bottom: 0;
+  width: 100%;
+  height: 255px;
+  background: $secondary;
 }
 
 .grid-btn {
+  @include font-size(15);
   width: 175px;
   height: 45px;
-  @include font-size(15);
 }

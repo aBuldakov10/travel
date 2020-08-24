@@ -5,10 +5,10 @@
 }
 
 .start-section-greating {
+  @include centering(xy);
   max-width: 760px;
   color: $light-txt;
   text-align: center;
-  @include centering(xy);
 
   h1 {
     @include font-size(74);

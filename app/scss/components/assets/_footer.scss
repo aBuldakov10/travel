@@ -1,17 +1,16 @@
 .footer-bg {
   background: url("/img/contact-us-bg-XL.png") no-repeat center;
   background-size: cover;
+  position: relative;
   padding-top: 140px;
   min-height: 460px;
   color: #fff;
-  position: relative;
 }
 
 .footer-marker {
   @include font-size(206);
-  color: $primary;
   @include centering(x);
-  //top: 312px;
+  color: $primary;
 }
 
 .footer-contacts {
@@ -20,9 +19,153 @@
 
 .main-contacts {
   max-width: 1025px;
-  margin:  0 auto;
+  margin:  0 auto 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-contacts-item {
+  display: flex;
+}
+
+.main-contacts-item-icon {
+  @include font-size(72);
+  margin: 0 30px 0 0;
+}
+
+#email {
+  @include font-size(50);
+  margin-top: -2px;
+}
+
+#call {
+  margin-top: -5px;
+}
+
+#address {
+  @include font-size(50);
+  margin-top: 5px;
+}
+
+.main-contacts-item-title {
+  font-weight: $bold;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.main-contacts-item-subtitle {
+  font-size: $base-font;
+}
+
+.social-contacts {
+  display: flex;
+  justify-content: center;
+
+  li {
+    margin: 0 15px;
+    width: 65px;
+    height: 65px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 3px solid $primary;
+      border-radius: 50%;
+      color: transparent;
+      position: relative;
+
+      &:before {
+        content: '';
+        @include font-size(30);
+        @include centering(xy);
+        font-family: 'FontAwesome';
+        color: $icon-color;
+      }
+
+      &:hover {
+        border: 3px solid rgba(0, 166, 255, .65);;
+        background: #eaeaea;
+        box-shadow: rgba(0, 0, 0, .3) 0 0 6px;
+      }
+    }
+  }
+}
+
+.facebook:before {
+  content: "\f09a"!important;
+}
+
+.google:before {
+  content: "\f0d5"!important;
+}
+
+.vkontakte:before {
+  content: "\f189"!important;
+}
+
+.youtube:before {
+  content: "\f167"!important;
+}
+
+.linkedin:before {
+  content: "\f0e1"!important;
+}
+
+.digg:before {
+  content: "\f1a6"!important;
+}
+
+.deviantart:before {
+  content: "\f1bd"!important;
 }
 
 .footer-copyright {
-  min-height: 50px;
+  position: relative;
+  padding: 60px 20px 65px;
+  text-align: center;
+
+  p {
+    margin-bottom: 10px;
+
+    &:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.up-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: $secondary;
+  color: transparent;
+  box-shadow: rgba(0, 0, 0, .2) 0 5px 25px;
+  z-index: 1;
+
+  &:after {
+    content: '\f077';
+    @include centering(xy);
+    @include font-size(20);
+    font-family: FontAwesome;
+    color: #fff;
+  }
+
+  &:hover {
+    background: #1aafff;
+  }
+
+  &:active {
+    color: transparent;
+  }
+
+  @include media(min, 768) {
+    width: 55px;
+    height: 55px;
+    bottom: 30px;
+    right: 30px;
+  }
 }

@@ -15,11 +15,11 @@
 }
 
 .customer-slider-item-stars {
-  margin: 30px auto 60px;
-  color: $primary;
   @include font-size(22);
+  color: $primary;
   max-width: 170px;
   width: 100%;
+  margin: 30px auto 60px;
   display: flex;
   justify-content: space-between;
 }

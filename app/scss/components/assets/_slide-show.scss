@@ -26,18 +26,18 @@
 }
 
 .status-list {
+  @include font-size(20);
   display: flex;
   margin: 35px 0 40px;
-  @include font-size(20);
 
   li {
-    margin: 0 65px 0 0;
     @include font-size(20);
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin: 0 65px 0 0;
 
     &:before {
       @include pseudo('', block, relative);
@@ -51,8 +51,8 @@
   .plane-blue:before,
   .hotel-blue:before,
   .cab-blue:before {
-    color: $secondary;
     @include font-size(47);
+    color: $secondary;
   }
 
   .plane-blue:before {

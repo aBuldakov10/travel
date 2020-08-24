@@ -2,22 +2,22 @@
 @mixin centering ($coordinate) {
 
   @if $coordinate == 'xy' {
+    transform: translate(-50%, -50%);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   @if $coordinate == 'x' {
+    transform: translateX(-50%);
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
   }
 
   @if $coordinate == 'y' {
+    transform: translateY(-50%);
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
   }
 }
 
@@ -47,5 +47,5 @@
 
 //Font size
 @mixin font-size ($size) {
-  font-size: ($size/16)*1rem;
+  font-size: ($size/$base-font)*1rem;
 }

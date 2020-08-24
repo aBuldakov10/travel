@@ -1,10 +1,10 @@
 header {
   font-family: $montserrat;
-  padding: 0 20px;
   position: fixed;
-  z-index: 2;
+  padding: 0 20px;
   width: 100%;
   background: rgba(0, 0, 0, .4);
+  z-index: 2;
 
   i {
     color: $primary;
@@ -24,14 +24,14 @@ header {
 
 .header-row {
   justify-content: space-between;
-  padding: 10px;
   max-width: 1220px;
   margin: 0 auto;
+  padding: 10px;
 
   &:first-child {
-    border-bottom: 3px solid rgba(255, 255, 255, .4);
     @include font-size(14);
     letter-spacing: .5px;
+    border-bottom: 3px solid rgba(255, 255, 255, .4);
   }
 }
 
@@ -82,8 +82,8 @@ header {
 
 .logo-name {
   @include font-size(34);
-  text-transform: capitalize;
   letter-spacing: -1px;
+  text-transform: capitalize;
 
   span {
     color: $primary;
@@ -96,8 +96,8 @@ header {
 
 .logo-description {
   @include font-size(9);
-  text-transform: uppercase;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .menu {

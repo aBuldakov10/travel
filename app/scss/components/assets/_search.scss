@@ -26,8 +26,8 @@
 }
 
 .form-item-title {
-  font-weight: $medium;
   @include font-size(20);
+  font-weight: $medium;
   text-transform: capitalize;
   margin-bottom: 20px;
 }
