@@ -24,9 +24,9 @@
 // Pseudo elements (:before, :after)
 @mixin pseudo ($content: '', $display: block, $position: absolute) {
   content: $content;
+  font-family: FontAwesome;
   display: $display;
   position: $position;
-  font-family: FontAwesome;
 }
 
 // Media queries

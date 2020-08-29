@@ -5,6 +5,11 @@ body {
   font-size: $base-font+px;
 
   @include media(min, 768) {
+    $base-font: 14;
+    font-size: $base-font+px;
+  }
+
+  @include media(min, 1224) {
     $base-font: 16;
     font-size: $base-font+px;
   }
