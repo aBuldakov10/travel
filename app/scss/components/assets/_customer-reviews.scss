@@ -4,8 +4,25 @@
   color: $light-txt;
 }
 
+.slider-wrap {
+  margin: 0 auto;
+
+  @include media(min, 768) {
+    max-width: 700px;
+  }
+
+  @include media(min, 1024) {
+    max-width: 900px;
+  }
+
+  @include media(min, 1224) {
+    max-width: 1075px;
+  }
+}
+
 .customer-slider-item {
-  max-width: 970px;
+  display: block!important;
+  width: 90%!important;
   margin: 0 auto;
 }
 
@@ -16,12 +33,12 @@
 
 .customer-slider-item-stars {
   @include font-size(22);
-  color: $primary;
+  display: flex;
+  justify-content: space-between;
   max-width: 170px;
   width: 100%;
   margin: 30px auto 60px;
-  display: flex;
-  justify-content: space-between;
+  color: $primary;
 }
 
 .customer-slider-item-info {
@@ -42,4 +59,47 @@
   @include font-size(25);
   font-weight: 900;
   margin: 0 0 5px;
+}
+
+// Slick style
+// Dots
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  position: relative;
+  bottom: -30px;
+  text-align: center;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    position: relative;
+    margin: 0 7px;
+
+    button {
+      display: block;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background: rgba(249, 224, 59, .4);
+      font-size: 0;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+      }
+    }
+
+    &.slick-active button:before {
+      background: $primary;
+      opacity: .8;
+    }
+  }
 }

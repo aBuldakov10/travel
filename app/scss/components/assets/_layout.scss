@@ -116,3 +116,43 @@ h4 {
   width: 175px;
   height: 45px;
 }
+
+// Slick
+.slick-slider {
+  position: relative;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+
+  .slick-track,
+  .slick-list {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slick-list {
+  overflow: hidden;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.slick-track {
+  position: relative;
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+}
+
+.slick-slide {
+  display: none;
+  height: 100%;
+  min-height: 1px;
+  float: left;
+
+  .slick-initialized & {
+    display: block;
+  }
+}
