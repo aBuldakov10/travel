@@ -8,20 +8,10 @@
     $('.slider-wrap').slick(
       {
         autoplay: true,
-        // autoplay: false,
         dots: true,
         arrows: false,
         speed: 500,
-        autoplaySpeed: 4000,
-        responsive: [
-          {
-            breakpoint: 971,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
+        autoplaySpeed: 4000
       }
     );
   });

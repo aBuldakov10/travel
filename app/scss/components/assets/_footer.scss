@@ -2,7 +2,7 @@
   background: url("/img/contact-us-bg-XL.png") no-repeat center;
   background-size: cover;
   position: relative;
-  padding-top: 60px;
+  padding: 60px 20px 0;
   min-height: 270px;
   color: #fff;
 
@@ -52,11 +52,10 @@
 }
 
 .main-contacts {
+  @include centering(x);
   display: inline-block;
   margin: 0 auto 60px;
-  transform: translateX(-50%);
   position: relative;
-  left: 50%;
 
   li {
     margin-bottom: 25px;
@@ -148,7 +147,7 @@
 
   @include media(min, 1224) {
     &:before {
-      left: 0;
+      left: 19px;
     }
   }
 }
@@ -157,6 +156,12 @@
   &:before {
     content: "\f278";
     top: 5px;
+  }
+
+  @include media(min, 1224) {
+    &:before {
+      left: -8px;
+    }
   }
 }
 

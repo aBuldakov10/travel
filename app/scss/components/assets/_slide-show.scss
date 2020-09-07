@@ -1,46 +1,96 @@
+.slide-show {
+  @include media(min, 1400) {
+    max-width: 1365px;
+    margin: 0 auto;
+  }
+}
+
 .tour-desc-img {
-  margin: 0 0 0 60px;
+  display: none;
+
+  @include media(min, 768) {
+    display: block;
+    width: 750px;
+    margin: 0 auto;
+  }
+
+  @include media(min, 1024) {
+    margin: 0 0 0 60px;
+  }
+
+  @include media(min, 1224) {
+    width: auto;
+  }
+
+  @include media(min, 1400) {
+    margin: 0;
+  }
 }
 
 .tour-desc {
-  position: absolute;
-  top: 230px;
-  right: 180px;
+  margin: 0 auto;
+  padding: 0 20px;
   background: #fff;
-  max-width: 600px;
-  padding: 45px;
-  border-radius: 10px;
-  box-shadow: 0 0 5px #969696;
+
+  @include media(min, 500) {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  @include media(min, 768) {
+    @include centering(xy);
+    padding: 45px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #969696;
+    background: rgba(255, 255, 255, .85);
+  }
+
+  @include media(min, 1024) {
+    transform: translateY(-50%);
+    right: 60px;
+    left: auto;
+  }
+
+  @include media(min, 1400) {
+    right: 0;
+    background: #fff;
+  }
 }
 
 .tour-desc-title {
-  @include font-size(38);
-  font-weight: $black;
-  text-transform: capitalize;
   margin: 0 0 15px;
 }
 
 .tour-desc-period {
   @include font-size(24);
   text-transform: capitalize;
+  text-align: center;
+}
+
+.tour-desc-title,
+.tour-desc-period {
+  @include media(min, 1024) {
+    text-align: left;
+  }
 }
 
 .status-list {
   @include font-size(20);
-  display: flex;
+  @include centering(x);
+  display: inline-block;
+  position: relative;
   margin: 35px 0 40px;
 
   li {
     @include font-size(20);
     text-transform: capitalize;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    margin: 0 65px 0 0;
+    margin-bottom: 20px;
 
     &:before {
       @include pseudo('', block, relative);
+      min-width: 60px;
     }
 
     &:last-child {
@@ -67,17 +117,52 @@
   .cab-blue:before {
     content: '\f1b9';
   }
+
+  @include media(min, 500) {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      display: block;
+      width: 30%;
+      margin-bottom: 0;
+      text-align: center;
+
+      &:before {
+        height: 40px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  @include media(min, 1024) {
+    li {
+      text-align: left;
+    }
+  }
 }
 
 .tour-book-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 390px;
   margin: 30px 0 0;
+  text-align: center;
+
+  @include media(min, 500) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include media(min, 1024) {
+    justify-content: flex-start;
+  }
 }
 
 .tour-book-price {
   @include font-size(50);
   font-weight: $black;
+  margin: 0 0 30px;
+
+  @include media(min, 500) {
+    margin: 0 85px 0 0;
+  }
 }
