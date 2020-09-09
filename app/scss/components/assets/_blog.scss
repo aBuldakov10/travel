@@ -5,18 +5,41 @@
 
 .blog-btn {
   @extend .grid-btn;
-  @include centering(x);
-  top: 230px;
+
+  @include media(min, 1024) {
+    @include centering(x);
+    top: -18px;
+    margin: 0;
+  }
+
+  @include media(min, 1224) {
+    top: -23px;
+  }
 }
 
 .blog-title {
   @include font-size(25);
   font-weight: $black;
-  margin: 0 0 18px;
   text-transform: capitalize;
+  margin: 0 0 7px;
 }
 
 .blog-container {
-  padding: 0 15px;
-  margin: 60px 0 40px;
+  margin: 20px auto 0;
+
+  @include media(min, 500) {
+    margin: 0;
+  }
+
+  @include media(min, 1024) {
+    position: relative;
+    margin: 0 auto;
+    padding: 40px 20px 25px;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  @include media(min, 1224) {
+    padding: 55px 0 35px;
+  }
 }

@@ -3,15 +3,22 @@
   background-size: cover;
 }
 
-.extended-grid-item {
-  @extend .grid-item;
-  overflow: hidden;
-}
-
 .grid-item-container {
-  position: relative;
-  padding: 18px 15px 20px;
-  height: calc(100% - 268px);
+  padding: 18px 0 0;
+
+  @include media(min, 500) {
+    padding: 0;
+  }
+
+  @include media(min, 1024) {
+    padding: 18px 15px 120px;
+    max-width: 380px;
+    text-align: center;
+  }
+
+  @include media(min, 1224) {
+    padding: 18px 15px 135px;
+  }
 }
 
 .deal-duration {
@@ -29,16 +36,37 @@
 
 .deal-desc {
   @extend .desc-txt;
-  margin: 15px 0 115px;
+  margin: 5px 0 20px;
+
+  @include media(min, 500) {
+    margin: 5px 0 0;
+  }
 }
 
 .book-now-block {
-  @include centering(x);
-  bottom: 20px;
+  @include media(min, 500) {
+    display: flex;
+    justify-content: space-between;
+    max-width: 250px;
+  }
+
+  @include media(min, 1024) {
+    @include centering(x);
+    bottom: 20px;
+    display: block;
+    max-width: none;
+  }
 }
 
 .deal-price {
   @include font-size(30);
   font-weight: $black;
-  margin: 0 0 20px;
+
+  @include media(min, 500) {
+    margin: 18px 0 0;
+    align-self: center;
+  }
+  @include media(min, 1024) {
+    margin: 18px 15px 0 0;
+  }
 }
