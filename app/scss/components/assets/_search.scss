@@ -3,17 +3,14 @@
 }
 
 .search-form {
-  display: flex;
-  justify-content: space-between;
-  margin: 65px auto 0;
-  max-width: 1216px;
-
   input {
-    height: 40px;
+    height: 30px;
 
     &[type='text'] {
       @include font-size(17);
+      margin: 0 0 20px;
       padding: 0 0 0 20px;
+      width: 100%;
       outline: none;
 
       &:focus {
@@ -22,41 +19,116 @@
       }
     }
   }
+
+  @include media(min, 500) {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  @include media(min, 768) {
+    input {
+      height: 40px;
+    }
+  }
+
+  @include media(min, 1024) {
+    position: relative;
+
+    .persons {
+      width: 46%;
+
+      input {
+        margin: 0;
+      }
+    }
+  }
+
+  @include media(min, 1224) {
+    display: flex;
+    margin: 65px auto 0;
+    max-width: 1216px;
+
+    label {
+      margin-right: 15px;
+    }
+
+    input[type='text'] {
+      margin: 0;
+    }
+
+    .persons {
+      width: auto;
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    width: 46%;
+  }
+
+  input {
+    text-transform: uppercase;
+  }
+
+  @include media(min, 1224) {
+    label {
+      width: auto;
+    }
+
+    input[type='text'] {
+      width: 210px;
+    }
+
+    &.persons input[type='text'] {
+      width: 130px;
+    }
+  }
 }
 
 .form-item-title {
   @include font-size(20);
   font-weight: $medium;
   text-transform: capitalize;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.location {
-  width: 240px;
+#location {
   text-transform: capitalize;
-}
 
-.period {
-  width: 210px;
-  text-transform: uppercase;
-}
-
-.persons-numb {
-  width: 130px;
+  @include media(min, 1224) {
+    width: 240px;
+  }
 }
 
 .search-btn {
+  display: block;
   width: 190px;
-  margin: 0 0 0 40px;
+  margin: 0 auto;
   align-self: flex-end;
-  background: $send-form-color;
+  background: $secondary;
   color: $light-txt;
 
   &:hover {
-    background: #1f37ea;
+    background: #1aafff;
+
   }
 
   &:active {
-    background: #0e1e95;
+  background: #0095e6;
+  }
+
+  @include media(min, 1024) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  @include media(min, 1224) {
+    position: static;
+    margin: 0 0 0 30px;
   }
 }
