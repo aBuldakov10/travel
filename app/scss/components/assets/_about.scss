@@ -1,40 +1,66 @@
 .about {
-  display: flex;
-}
-
-.about-bg {
-  background-repeat: no-repeat;
+  background: url("/img/about/right-side-XL.jpg") no-repeat fixed;
   background-size: cover;
-  background-position: 0 100%;
-  width: 50%;
-  min-height: 619px;
-}
 
-.left-pic {
-  background-image: url("/img/about/left-side-XL.jpg");
-}
-
-.right-pic {
-  background-image: url("/img/about/right-side-XL.jpg");
-}
-
-.column {
-  padding: 0 60px;
-
-  h3, h4 {
-    text-align: left;
+  img {
+    display: none;
   }
 
+  @include media(min, 1024) {
+    display: flex;
+    justify-content: center;
+    background-image: url("/img/about/right-side-revert-XL.jpg");
+
+    img {
+      display: block;
+      width: 400px;
+      align-self: flex-start;
+    }
+  }
+
+  @include media(min, 1224) {
+    padding: 0;
+
+    .about-block {
+      align-self: center;
+      width: 50%;
+    }
+  }
+}
+
+.about-container {
+  padding: 0 20px 0;
+
   h3 {
-    margin: 0 0 5px;
+    margin: 0 0 10px;
   }
 
   h4 {
-    margin: 0 0 40px;
+    margin: 0 0 30px;
   }
 
   ul {
     margin: 45px 0 0;
+  }
+
+  @include media(min, 500) {
+    max-width: 530px;
+    margin: 0 auto;
+  }
+
+  @include media(min, 1024) {
+    margin: 0;
+    padding: 0 0 0 60px;
+
+    h3,
+    h4 {
+      text-align: left;
+    }
+  }
+
+  @include media(min, 1224) {
+    padding: 70px 60px 80px;
+    max-width: none;
   }
 }
 

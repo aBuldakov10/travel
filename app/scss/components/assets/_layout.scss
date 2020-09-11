@@ -80,11 +80,13 @@ h4 {
   margin: 0 0 60px;
 }
 
+// Use for search and footer sections
 .search-section,
 .footer-copyright {
   background: url("/img/yellow-bg.jpg");
 }
 
+// Use for budget, best-deals and blog sections
 .grid-block {
   position: relative;
   z-index: 1;
@@ -154,6 +156,7 @@ h4 {
   }
 }
 
+// Use for budget and best-deals sections
 .btm-block {
   @include font-size(0);
   position: absolute;
@@ -171,6 +174,7 @@ h4 {
   }
 }
 
+// Use for best deals, blog and slide-show sections
 .grid-btn {
   @include font-size(15);
   width: 140px;
