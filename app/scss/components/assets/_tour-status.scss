@@ -1,77 +1,160 @@
-.status-section,
-.status-line,
-.status-line-item {
-  display: flex;
-}
+.status-section {
+  img {
+    display: none;
+  }
 
-.status-section button {
-  margin: 60px 0 0;
+  button {
+    display: block;
+    margin: 30px auto 0;
+  }
+
+  @include media(min, 1024) {
+    .container {
+      display: flex;
+      max-width: 900px;
+    }
+
+    img {
+      display: block;
+      width: 300px;
+      align-self: center;
+    }
+
+    button {
+      display: inline-block;
+    }
+  }
+
+  @include media(min, 1224) {
+    .container {
+      max-width: 1295px;
+    }
+
+    img {
+      width: auto;
+    }
+
+    .side-container {
+      padding: 0 0 0 90px;
+    }
+
+    button {
+      margin: 60px 0 0;
+    }
+  }
 }
 
 .status-line {
-  border: 2px solid $secondary;
-  height: 100px;
-  margin: 0 0 50px;
-  justify-content: space-between;
-  clip-path: polygon(96.3% 0%, 100% 50%, 96.3% 100%, 0 100%, 0 50%, 0 0);
-  background: $secondary;
+  max-width: 300px;
+  margin: 0 auto 30px;
+
+  @include media(min, 1024) {
+    margin: 0 0 30px;
+  }
+
+  @include media(min, 1224) {
+    display: flex;
+    margin: 40px 0 50px;
+    max-width: none;
+    height: 100px;
+    border: 2px solid $secondary;
+    clip-path: polygon(96.3% 0%, 100% 50%, 96.3% 100%, 0 100%, 0 50%, 0 0);
+    background: $secondary;
+  }
 }
 
 .status-line-item {
   @include font-size(22);
   font-weight: $medium;
-  text-transform: capitalize;
-  width: 35.7%;
-  clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 50%, 0 0);
+  display: flex;
   align-items: center;
+  position: relative;
+  padding: 0 0 0 55px;
+  min-height: 40px;
+  clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 50%, 0 0);
+  text-transform: capitalize;
 
-  p {
-    margin: 0 0 0 30px;
-    padding: 0 0 0 55px;
-    position: relative;
+  &:before {
+    content: '';
+    @include centering(y);
+    left: 20px;
+    font-family: FontAwesome;
+  }
+
+  @include media(min, 768) {
+    min-height: 50px;
+  }
+
+  @include media(min, 1224) {
+    padding: 0 0 0 70px;
+    width: 35.9%;
 
     &:before {
-      @include pseudo();
-      left: 0;
       @include font-size(44);
-      @include centering(y);
     }
   }
 }
 
 .fly {
   background: $secondary;
-  z-index: 2;
 
-  p:before {
+  &:before {
     content: "\f072";
+  }
+
+  @include media(min, 1224) {
+    z-index: 2;
   }
 }
 
 .cab,
 .hotel {
-  p {
-    margin: 0 0 0 55px;
-    padding: 0 0 0 70px;
+  @include media(min, 1224) {
+    margin: 0 0 0 -4%;
+    padding: 0 0 0 117px;
+
+    &:before {
+      left: 50px;
+    }
   }
 }
 
 .cab {
   background: $inactive-status;
-  margin: 0 0 0 -4%;
-  z-index: 1;
 
-  p:before {
+  &:before {
     content: '\f1b9';
+  }
+
+  @include media(min, 1224) {
+    z-index: 1;
   }
 }
 
 .hotel {
-  background: #fff;
-  margin: 0 0 0 -4%;
+  background: $secondary;
 
-  p:before {
+  &:before {
     content: '\f19c';
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    background: $light-txt;
+    width: 98%;
+    height: 92%;
+    position: absolute;
+    left: 2px;
+    clip-path: polygon(90.5% 0, 100% 50%, 90.5% 100%, 0 100%, 0 50%, 0 0);
+  }
+
+  span {
+    z-index: 1;
+  }
+
+  @include media(min, 1224) {
+    background: $light-txt;
   }
 }
 
