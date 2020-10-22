@@ -3,13 +3,15 @@
 }
 
 .search-form {
+  margin: 1.85em auto 0;
+
   input {
     height: 30px;
 
     &[type='text'] {
       @include font-size(17);
-      margin: 0 0 20px;
-      padding: 0 0 0 20px;
+      margin-bottom: 20px;
+      padding-left: 20px;
       width: 100%;
       outline: none;
 
@@ -22,7 +24,7 @@
 
   @include media(min, 500) {
     max-width: 500px;
-    margin: 0 auto;
+    margin-top: 3.35em;
   }
 
   @include media(min, 768) {
@@ -38,14 +40,13 @@
       width: 46%;
 
       input {
-        margin: 0;
+        margin-bottom: 0;
       }
     }
   }
 
   @include media(min, 1224) {
     display: flex;
-    margin: 65px auto 0;
     max-width: 1216px;
 
     label {
@@ -53,7 +54,7 @@
     }
 
     input[type='text'] {
-      margin: 0;
+      margin-bottom: 0;
     }
 
     .persons {
@@ -107,14 +108,14 @@
 .search-btn {
   display: block;
   width: 190px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   align-self: flex-end;
   background: $secondary;
   color: $light-txt;
 
   &:hover {
     background: #1aafff;
-
   }
 
   &:active {
@@ -129,6 +130,6 @@
 
   @include media(min, 1224) {
     position: static;
-    margin: 0 0 0 30px;
+    margin-left: 30px;
   }
 }

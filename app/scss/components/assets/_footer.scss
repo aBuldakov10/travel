@@ -2,39 +2,41 @@
   background: url("/img/contact-us-bg-XL.png") no-repeat center;
   background-size: cover;
   position: relative;
-  padding: 60px 20px 0;
-  min-height: 270px;
+  padding: 60px 20px 135px;
   color: #fff;
 
   &:after {
     @include pseudo("\f041", block, absolute);
-    @include font-size(160);
-    @include centering(x);
+    @include font-size(150);
+    transform: translateX(-50%);
+    left: 50%;
     bottom: -40px;
     color: $primary;
   }
 
+  @include media(min, 500) {
+    padding-bottom: 155px;
+  }
+
   @include media(min, 768) {
-    min-height: 300px;
+    padding-bottom: 170px;
 
     &:after {
-      @include font-size(150);
-      bottom: -40px;
+      @include font-size(165);
     }
   }
 
   @include media(min, 1024) {
-    min-height: 355px;
+    padding-bottom: 190px;
 
     &:after {
       @include font-size(170);
-      bottom: -40px;
     }
   }
 
   @include media(min, 1224) {
     padding-top: 140px;
-    min-height: 465px;
+    padding-bottom: 230px;
 
     &:after {
       @include font-size(200);
@@ -47,7 +49,8 @@
   padding: 60px 20px 50px;
 
   @include media(min, 768) {
-    padding: 90px 20px 80px;
+    padding-top: 90px;
+    padding-bottom: 80px;
   }
 }
 
@@ -63,9 +66,9 @@
     position: relative;
 
     &:before {
+      @include font-size(50);
       @include pseudo();
       left: 0;
-      @include font-size(50);
       line-height: 1;
     }
 
@@ -88,7 +91,8 @@
     left: 0;
 
     li {
-      padding: 70px 0 0;
+      padding-top: 70px;
+      padding-left: 0;
       width: 30%;
       text-align: center;
 
@@ -100,15 +104,12 @@
   }
 
   @include media(min, 1224) {
-    display: flex;
-    justify-content: space-between;
-    margin:  0 auto 95px;
+    margin-bottom: 95px;
     max-width: 1025px;
-    transform: none;
-    left: 0;
 
     li {
-      padding: 0 0 0 70px;
+      padding-top: 0;
+      padding-left: 70px;
       text-align: left;
 
       &:before {
@@ -117,11 +118,6 @@
       }
     }
   }
-}
-
-.main-contacts-item-icon {
-  @include font-size(72);
-  margin: 0 30px 0 0;
 }
 
 #email {
@@ -166,9 +162,10 @@
 }
 
 .main-contacts-item-title {
+  @include font-size(17);
   font-weight: $bold;
   text-transform: uppercase;
-  margin: 0 0 10px;
+  margin: 0 0 .588em;
 }
 
 .main-contacts-item-subtitle {
@@ -200,7 +197,9 @@
       &:before {
         @include pseudo();
         @include font-size(30);
-        @include centering(xy);
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
         color: $icon-color;
       }
 
@@ -259,6 +258,7 @@
 }
 
 .footer-copyright {
+  @include font-size(17);
   position: relative;
   padding: 60px 20px 65px;
   text-align: center;
@@ -266,7 +266,7 @@
   p {
     margin-bottom: 10px;
 
-    &:nth-last-child(-n+2) {
+    &:last-child {
       margin-bottom: 0;
     }
   }

@@ -1,35 +1,54 @@
 .start-section {
-  background: url('/img/start-bg-XL.jpg') no-repeat center fixed;
+  background: url('/img/start-bg-XL.jpg') no-repeat center;
   background-size: cover;
-  height: 100vh;
+  padding-top: 130px;
+  padding-bottom: 70px;
+
+  @include media(min, 1024) {
+    padding-top: 330px;
+    padding-bottom: 170px;
+  }
 }
 
 .start-section-greating {
-  @include centering(xy);
-  max-width: 760px;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 20px;
   color: $light-txt;
   text-align: center;
 
   h1 {
-    @include font-size(74);
+    @include font-size(34);
     text-transform: capitalize;
     letter-spacing: .3px;
-    margin: 0 0 15px;
+    margin-bottom: .4em;
   }
 
   h2 {
-    @include font-size(40);
+    @include font-size(20);
     text-transform: uppercase;
-    letter-spacing: 12px;
-    margin: 0 0 35px;
+    letter-spacing: 5px;
+    margin-bottom: 1.13em;
   }
 
   p {
-    margin: 0 0 50px;
+    margin-bottom: 2.778em;
+  }
+
+  @include media(min, 768) {
+    max-width: 760px;
+
+    h1 {
+      @include font-size(74);
+    }
+
+    h2 {
+      @include font-size(40);
+      letter-spacing: 12px;
+    }
+  }
+
+  @include media(min, 1024) {
+    max-width: 800px;
   }
 }
-
-//.start-btn {
-//  width: 215px;
-//  height: 55px;
-//}

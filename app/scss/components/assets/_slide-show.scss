@@ -1,6 +1,6 @@
 .slide-show {
   .grid-btn {
-    margin: 0;
+    margin-top: 0;
   }
 
   @include media(min, 1400) {
@@ -19,7 +19,7 @@
   }
 
   @include media(min, 1024) {
-    margin: 0 0 0 60px;
+    margin-left: 60px;
   }
 
   @include media(min, 1224) {
@@ -27,16 +27,17 @@
   }
 
   @include media(min, 1400) {
-    margin: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
 .tour-desc {
-  margin: 0 auto;
   padding: 0 20px;
   background: #fff;
 
   @include media(min, 500) {
+    margin: 0 auto;
     max-width: 600px;
     width: 100%;
   }
@@ -62,7 +63,7 @@
 }
 
 .tour-desc-title {
-  margin: 0 0 15px;
+  margin: 0 0 .375em;
 }
 
 .tour-desc-period {
@@ -83,7 +84,7 @@
   @include centering(x);
   display: inline-block;
   position: relative;
-  margin: 35px 0 40px;
+  margin: 1.75em 0;
 
   li {
     @include font-size(20);
@@ -147,7 +148,7 @@
 }
 
 .tour-book-section {
-  margin: 30px 0 0;
+  margin-top: 1.666em;
   text-align: center;
 
   @include media(min, 500) {
@@ -164,9 +165,10 @@
 .tour-book-price {
   @include font-size(50);
   font-weight: $black;
-  margin: 0 0 30px;
+  margin-bottom: .75em;
 
   @include media(min, 500) {
-    margin: 0 85px 0 0;
+    margin-right: 85px;
+    margin-bottom: 0;
   }
 }

@@ -47,5 +47,5 @@
 
 //Font size
 @mixin font-size ($size) {
-  font-size: ($size/$base-font)*1rem;
+  font-size: ($size/$desc-width-font)*1rem;
 }

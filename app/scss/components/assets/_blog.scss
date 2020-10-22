@@ -9,7 +9,7 @@
   @include media(min, 1024) {
     @include centering(x);
     top: -18px;
-    margin: 0;
+    margin-top: 0;
   }
 
   @include media(min, 1224) {
@@ -21,25 +21,26 @@
   @include font-size(25);
   font-weight: $black;
   text-transform: capitalize;
-  margin: 0 0 7px;
+  margin-bottom: 7px;
 }
 
 .blog-container {
-  margin: 20px auto 0;
+  margin-top: 20px;
 
   @include media(min, 500) {
-    margin: 0;
+    margin-top: 0;
   }
 
   @include media(min, 1024) {
     position: relative;
     margin: 0 auto;
-    padding: 40px 20px 25px;
+    padding: 40px 0 25px;
     max-width: 280px;
     text-align: center;
   }
 
   @include media(min, 1224) {
-    padding: 55px 0 35px;
+    padding-top: 55px;
+    padding-bottom: 35px;
   }
 }

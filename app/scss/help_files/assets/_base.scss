@@ -8,7 +8,19 @@
 // Base styles
 html,
 body {
-  font-size: $base-font+px;
+  font-size: $mob-font+px;
+
+  @include media(min, 500) {
+    font-size: $tab-font+px;
+  }
+
+  @include media(min, 1024) {
+    font-size: $desc-font+px;
+  }
+
+  @include media(min, 1224) {
+    font-size: $desc-width-font+px;
+  }
 }
 
 body {

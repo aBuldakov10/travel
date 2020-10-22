@@ -1,7 +1,10 @@
 .service-list {
+  margin-top: 3.333em;
+
   @include media(min, 500) {
     max-width: 500px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @include media(min, 1024) {
@@ -12,40 +15,42 @@
 
   @include media(min, 1224) {
     max-width: 1245px;
+    padding-bottom: 15px;
   }
 }
 
 .service-list-item {
-  margin: 0 0 40px;
-  padding: 0 0 0 80px;
+  margin-bottom: 40px;
+  padding-left: 70px;
   position: relative;
 
-  &:last-child {
-    margin: 0;
-  }
-
   &:before {
-    @include font-size(55);
+    @include font-size(40);
     @include pseudo();
     left: 10px;
     color: $secondary;
   }
 
   @include media(min, 500) {
-    padding: 0 0 0 110px;
+    padding-left: 110px;
+
+    &:before {
+      @include font-size(55);
+    }
   }
 
   @include media(min, 1024) {
     width: 50%;
-    margin: 0 0 50px;
-    padding: 0 40px 0 110px;
+    margin-bottom: 50px;
+    padding-right: 40px;
 
     &:nth-last-child(-n+2) {
-      margin: 0 0 20px;
+      margin-bottom: 0;
     }
 
     &:nth-child(even) {
-      padding: 0 0 0 150px;
+      padding-right: 0;
+      padding-left: 150px;
 
       &:before {
         left: 50px;
@@ -54,10 +59,12 @@
   }
 
   @include media(min, 1224) {
-    padding: 0 90px 0 110px;
+    padding-right: 90px;
+    padding-left: 110px;
 
     &:nth-child(even) {
-      padding: 0 50px 0 150px;
+      padding-right: 50px;
+      padding-left: 150px;
     }
   }
 }
@@ -102,5 +109,5 @@
   @include font-size(22);
   font-weight: 500;
   text-transform: capitalize;
-  margin: 0 0 10px;
+  margin-bottom: .454545em;
 }

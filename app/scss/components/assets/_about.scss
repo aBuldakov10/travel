@@ -19,7 +19,8 @@
   }
 
   @include media(min, 1224) {
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 
     .about-block {
       align-self: center;
@@ -29,18 +30,14 @@
 }
 
 .side-container {
-  padding: 0 20px 0;
+  padding: 0 20px;
 
-  h3 {
-    margin: 0 0 10px;
-  }
-
-  h4 {
-    margin: 0 0 30px;
+  h2 {
+    margin-bottom: .375em;
   }
 
   ul {
-    margin: 45px 0 0;
+    margin-top: 2.5em;
   }
 
   @include media(min, 500) {
@@ -49,25 +46,27 @@
   }
 
   @include media(min, 1024) {
-    margin: 0;
-    padding: 0 0 0 60px;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 60px;
 
-    h3,
-    h4 {
+    h2,
+    h3 {
       text-align: left;
     }
   }
 
   @include media(min, 1224) {
-    padding: 70px 60px 80px;
+    padding: 70px 60px;
     max-width: none;
   }
 }
 
 .about-list-item {
   position: relative;
-  margin: 0 0 25px;
-  padding: 0 0 0 50px;
+  margin-bottom: 1.389em;
+  padding-left: 50px;
 
   &:before {
     @include pseudo("\f058");

@@ -4,10 +4,10 @@
 }
 
 .grid-item-container {
-  padding: 18px 0 0;
+  padding-top: 18px;
 
   @include media(min, 500) {
-    padding: 0;
+    padding-top: 0;
   }
 
   @include media(min, 1024) {
@@ -17,14 +17,14 @@
   }
 
   @include media(min, 1224) {
-    padding: 18px 15px 135px;
+    padding-bottom: 135px;
   }
 }
 
 .deal-duration {
   @include font-size(20);
   font-weight: $medium;
-  margin: 0 0 10px;
+  margin-bottom: 10px;
   text-transform: capitalize;
 }
 
@@ -39,7 +39,7 @@
   margin: 5px 0 20px;
 
   @include media(min, 500) {
-    margin: 5px 0 0;
+    margin-bottom: 0;
   }
 }
 
@@ -63,10 +63,7 @@
   font-weight: $black;
 
   @include media(min, 500) {
-    margin: 18px 0 0;
+    margin-top: 18px;
     align-self: center;
-  }
-  @include media(min, 1024) {
-    margin: 18px 15px 0 0;
   }
 }

@@ -2,6 +2,10 @@
   background: url("/img/reviews/reviews-bg-XL.jpg") no-repeat center fixed;
   background-size: cover;
   color: $light-txt;
+
+  h3 {
+    margin: 0 0 1.5em;
+  }
 }
 
 .slider-wrap {
@@ -37,7 +41,7 @@
   justify-content: space-between;
   max-width: 170px;
   width: 100%;
-  margin: 30px auto 60px;
+  margin: 1.36em auto 2.5em;
   color: $primary;
 }
 

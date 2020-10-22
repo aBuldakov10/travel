@@ -5,7 +5,13 @@
 
   button {
     display: block;
-    margin: 30px auto 0;
+    margin: 3.75em auto 0;
+  }
+
+  @include media(max, 768) {
+    .side-container {
+      padding: 0;
+    }
   }
 
   @include media(min, 1024) {
@@ -37,24 +43,19 @@
     .side-container {
       padding: 0 0 0 90px;
     }
-
-    button {
-      margin: 60px 0 0;
-    }
   }
 }
 
 .status-line {
   max-width: 300px;
-  margin: 0 auto 30px;
+  margin: 2.5em auto;
 
   @include media(min, 1024) {
-    margin: 0 0 30px;
+    margin: 2.5em 0;
   }
 
   @include media(min, 1224) {
     display: flex;
-    margin: 40px 0 50px;
     max-width: none;
     height: 100px;
     border: 2px solid $secondary;
@@ -69,7 +70,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0 0 0 55px;
+  padding-left: 55px;
   min-height: 40px;
   clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 50%, 0 0);
   text-transform: capitalize;
@@ -86,7 +87,7 @@
   }
 
   @include media(min, 1224) {
-    padding: 0 0 0 70px;
+    padding-left: 70px;
     width: 35.9%;
 
     &:before {
@@ -110,8 +111,8 @@
 .cab,
 .hotel {
   @include media(min, 1224) {
-    margin: 0 0 0 -4%;
-    padding: 0 0 0 117px;
+    margin-left: -4%;
+    padding-left: 117px;
 
     &:before {
       left: 50px;
