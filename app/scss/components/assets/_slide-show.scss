@@ -94,8 +94,11 @@
     margin-bottom: 20px;
 
     &:before {
-      @include pseudo('', block, relative);
+      @include font-size(47);
+      display: block;
+      font-family: FontAwesome;
       min-width: 60px;
+      color: $secondary;
     }
 
     &:last-child {
@@ -103,24 +106,8 @@
     }
   }
 
-  .plane-blue:before,
-  .hotel-blue:before,
-  .cab-blue:before {
-    @include font-size(47);
-    color: $secondary;
-  }
-
-  .plane-blue:before {
-    content: '\f072';
+  .plane:before {
     @include font-size(55);
-  }
-
-  .hotel-blue:before {
-    content: '\f19c';
-  }
-
-  .cab-blue:before {
-    content: '\f1b9';
   }
 
   @include media(min, 500) {

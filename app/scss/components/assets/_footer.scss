@@ -6,8 +6,9 @@
   color: #fff;
 
   &:after {
-    @include pseudo("\f041", block, absolute);
     @include font-size(150);
+    font-family: FontAwesome;
+    position: absolute;
     transform: translateX(-50%);
     left: 50%;
     bottom: -40px;
@@ -45,6 +46,12 @@
   }
 }
 
+.map-marker {
+  &:after {
+    @extend %map-marker;
+  }
+}
+
 .footer-contacts {
   padding: 60px 20px 50px;
 
@@ -67,7 +74,8 @@
 
     &:before {
       @include font-size(50);
-      @include pseudo();
+      font-family: FontAwesome;
+      position: absolute;
       left: 0;
       line-height: 1;
     }
@@ -83,6 +91,22 @@
     }
   }
 
+  .phone-mob {
+    &:before {
+      @extend %phone-mob;
+      @include font-size(72);
+      top: 6px;
+      left: 9px;
+      line-height: .7;
+    }
+  }
+
+  .map {
+    &:before {
+      @extend %map;
+    }
+  }
+
   @include media(min, 768) {
     display: flex;
     justify-content: space-between;
@@ -93,6 +117,7 @@
     li {
       padding-top: 70px;
       padding-left: 0;
+      margin-bottom: 0;
       width: 30%;
       text-align: center;
 
@@ -101,10 +126,22 @@
         top: 0;
       }
     }
+
+    .phone-mob {
+      &:before {
+        left: 50%;
+      }
+    }
+
+    .map {
+      &:before {
+        top: 5px;
+      }
+    }
   }
 
   @include media(min, 1224) {
-    margin-bottom: 95px;
+    margin-bottom: 110px;
     max-width: 1025px;
 
     li {
@@ -117,47 +154,24 @@
         left: 0;
       }
     }
-  }
-}
 
-#email {
-  &:before {
-    content: "\f003";
-  }
-}
-
-#call {
-  &:before {
-    content: "\f10b";
-    @include font-size(72);
-    top: 6px;
-    left: 9px;
-    line-height: .7;
-  }
-
-  @include media(min, 768) {
-    &:before {
-      left: 50%;
+    .phone-mob {
+      &:before {
+        left: 19px;
+      }
     }
-  }
 
-  @include media(min, 1224) {
-    &:before {
-      left: 19px;
+    .map {
+      &:before {
+        left: -8px;
+      }
     }
   }
 }
 
-#address {
+.envelope-regular {
   &:before {
-    content: "\f278";
-    top: 5px;
-  }
-
-  @include media(min, 1224) {
-    &:before {
-      left: -8px;
-    }
+    @extend %envelope-regular;
   }
 }
 
@@ -195,8 +209,9 @@
       position: relative;
 
       &:before {
-        @include pseudo();
         @include font-size(30);
+        font-family: FontAwesome;
+        position: absolute;
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
@@ -229,32 +244,22 @@
   }
 }
 
-.facebook:before {
-  content: "\f09a"!important;
+.linkedin {
+  &:before {
+    @extend %linkedin;
+  }
 }
 
-.google:before {
-  content: "\f0d5"!important;
+.digg {
+  &:before {
+    @extend %digg;
+  }
 }
 
-.vkontakte:before {
-  content: "\f189"!important;
-}
-
-.youtube:before {
-  content: "\f167"!important;
-}
-
-.linkedin:before {
-  content: "\f0e1"!important;
-}
-
-.digg:before {
-  content: "\f1a6"!important;
-}
-
-.deviantart:before {
-  content: "\f1bd"!important;
+.deviantart {
+  &:before {
+    @extend %deviantart;
+  }
 }
 
 .footer-copyright {
@@ -286,7 +291,7 @@
   z-index: 1;
 
   &:after {
-    content: '\f077';
+    @extend %up-arrow;
     @include centering(xy);
     @include font-size(20);
     font-family: FontAwesome;

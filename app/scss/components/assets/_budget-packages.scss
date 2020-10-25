@@ -34,7 +34,8 @@
 
   &:before {
     @include font-size(45);
-    @include pseudo('', block, relative);
+    font-family: FontAwesome;
+    display: block;
     margin-bottom: 15px;
     color: $icon-color;
   }
@@ -64,24 +65,6 @@
       @include font-size(70);
       margin-bottom: 20px;
     }
-  }
-}
-
-#low {
-  &:before {
-    content: "\f1b9";
-  }
-}
-
-#mid {
-  &:before {
-    content: "\f238";
-  }
-}
-
-#high {
-  &:before {
-    content: "\f072";
   }
 }
 
@@ -132,8 +115,10 @@
     text-align: left;
 
     &:before {
+      @extend %check;
       @include font-size(17);
-      @include pseudo('\f058', block, absolute);
+      font-family: FontAwesome;
+      position: absolute;
       left: 0;
       color: $secondary;
     }

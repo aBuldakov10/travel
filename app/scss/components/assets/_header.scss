@@ -19,6 +19,18 @@ header {
   }
 }
 
+.sign-in {
+  &:before {
+    @extend %sign-in;
+  }
+}
+
+.sign-up {
+  &:before {
+    @extend %sign-up;
+  }
+}
+
 // Mobile header style
 .header-mob {
   padding: 0 20px;
@@ -118,12 +130,8 @@ header {
 }
 
 .mob-menu-auth-link {
-  display: flex;
-  align-items: center;
-
   &:before {
     @include font-size(20);
-    content: '';
     font-family: FontAwesome;
     margin-right: 10px;
     color: $primary;
@@ -163,32 +171,6 @@ header {
   }
 }
 
-.auth-wrap {
-  p {
-    margin-right: 30px;
-    padding-left: 23px;
-    position: relative;
-    text-transform: capitalize;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &:before {
-      @include font-size(20);
-      @include pseudo();
-      left: 0;
-      top: -3px;
-      color: $primary;
-    }
-
-    &:hover {
-      cursor: pointer;
-      color: $primary;
-    }
-  }
-}
-
 .contact-link {
   position: relative;
   padding-left: 26px;
@@ -199,10 +181,10 @@ header {
 
   &:before {
     @include font-size(20);
-    @include pseudo();
+    font-family: FontAwesome;
+    position: absolute;
     top: -3px;
     left: 0;
-    content: "\f0e0";
     color: $primary;
   }
 }
@@ -211,8 +193,14 @@ header {
   padding-left: 20px;
 
   &:before {
-    content: "\f095";
+    @extend %phone;
     top: -2px;
+  }
+}
+
+.mail {
+  &:before {
+    @extend %envelope;
   }
 }
 
@@ -232,13 +220,41 @@ header {
 
     &:before {
       @include font-size(20);
-      @include pseudo();
+      font-family: FontAwesome;
+      position: absolute;
       top: -3px;
       color: $primary;
     }
 
     &:hover {
       transform: scale(1.2);
+    }
+  }
+}
+
+.auth-wrap {
+  p {
+    margin-right: 30px;
+    padding-left: 23px;
+    position: relative;
+    text-transform: capitalize;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:before {
+      @include font-size(20);
+      font-family: FontAwesome;
+      position: absolute;
+      left: 0;
+      top: -3px;
+      color: $primary;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $primary;
     }
   }
 }
@@ -311,17 +327,5 @@ header {
         width: 100%;
       }
     }
-  }
-}
-
-.sign-in {
-  &:before {
-    content: '\f007'!important;
-  }
-}
-
-.sign-up {
-  &:before {
-    content: '\f084'!important;
   }
 }

@@ -69,8 +69,10 @@
   padding-left: 50px;
 
   &:before {
-    @include pseudo("\f058");
+    @extend %check;
+    font-family: FontAwesome;
     @include font-size(30);
+    position: absolute;
     top: -5px;
     left: 0;
     color: $secondary;

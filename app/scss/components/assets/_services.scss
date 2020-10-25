@@ -26,7 +26,8 @@
 
   &:before {
     @include font-size(40);
-    @include pseudo();
+    font-family: FontAwesome;
+    position: absolute;
     left: 10px;
     color: $secondary;
   }
@@ -69,39 +70,21 @@
   }
 }
 
-#plane {
+.bike {
   &:before {
-    content: "\f072";
+    @extend %bike;
   }
 }
 
-#train {
+.cultery {
   &:before {
-    content: "\f238";
+    @extend %cultery;
   }
 }
 
-#hotel {
+.eye {
   &:before {
-    content: "\f19c";
-  }
-}
-
-#bike {
-  &:before {
-    content: "\f206";
-  }
-}
-
-#cultery {
-  &:before {
-    content: "\f0f5";
-  }
-}
-
-#eye {
-  &:before {
-    content: "\f06e";
+    @extend %eye;
   }
 }
 
