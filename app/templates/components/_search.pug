@@ -3,20 +3,21 @@ section.search-section
     h2.search-title find hotels
     form.search-form
       label
-        p.form-item-title where
-        input#location(type="text" placeholder='location' maxlength='15')
-      .form-group
+        span.form-item-title where
+        input(id="location" type="text" placeholder='location' maxlength='15')
+      .form-group.duration
         label
-          p.form-item-title check in
-          input.period(type="text" placeholder='dd-mm-yyyy' maxlength='15')
+          span.form-item-title check in
+          input.period(id="check-in" type="text" placeholder='dd.mm.yyyy' maxlength='10')
         label
-          p.form-item-title check out
-          input.period(type="text" placeholder='dd-mm-yyyy' maxlength='15')
+          span.form-item-title check out
+          input.period(id="check-out" type="text" placeholder='dd.mm.yyyy' maxlength='10')
       .form-group.persons
         label
-          p.form-item-title adult
-          input(type="text" placeholder='01' maxlength='15')
+          span.form-item-title adult
+          input(id="adult" type="text" placeholder='1' maxlength='2')
         label
-          p.form-item-title child
-          input(type="text" placeholder='00' maxlength='15')
+          span.form-item-title child
+          input(id="child" type="text" placeholder='0' maxlength='2')
       input.search-btn(type='submit' value='click here')
+    span.send-form-tooltip Fill the form correctly
