@@ -9,22 +9,23 @@ header
         p.logo-description creative tagline here
       .mob-burger
         span mobile-burger
-    ul.menu.mob-menu
-      li
-        a(href='#' data-anchor="about") about
-      li
-        a(href='#' data-anchor="budget") budget
-      li
-        a(href='#' data-anchor="discount") discount
-      li
-        a(href='#' data-anchor="blog") blog
-      li
-        a(href='#' data-anchor="reviews") reviews
-      li
-        a(href='#' data-anchor="contacts") contacts
-      li
-        a(href='#').mob-menu-auth-link.sign-in sign in
-        a(href='#').mob-menu-auth-link.sign-up sign up
+    nav.mob-menu-wrapper
+      ul.menu.mob-menu
+        li
+          a(href='#' data-anchor="about") about
+        li
+          a(href='#' data-anchor="budget") budget
+        li
+          a(href='#' data-anchor="discount") discount
+        li
+          a(href='#' data-anchor="blog") blog
+        li
+          a(href='#' data-anchor="reviews") reviews
+        li
+          a(href='#' data-anchor="contacts") contacts
+        li
+          p.mob-menu-auth-link.sign-in(data-class="sign-in-tab") sign in
+          p.mob-menu-auth-link.sign-up(data-class="sign-up-tab") sign up
   .header-desk
     .container
       .header-row
@@ -36,8 +37,8 @@ header
           a.vkontakte(href='https://vk.com/' target='_blank') vkontakte
           a.youtube(href='https://www.youtube.com/' target='_blank') youtube
         .auth-wrap
-          p.sign-in sign in
-          p.sign-up sign up
+          p.desk-menu-auth-link.sign-in(data-class="sign-in-tab") sign in
+          p.desk-menu-auth-link.sign-up(data-class="sign-up-tab") sign up
       nav.header-row
         .logo
           p.logo-name expl
@@ -58,3 +59,36 @@ header
             a(href='#' data-anchor="reviews") reviews
           li
             a(href='#' data-anchor="contacts") contacts
+  .auth-block-wrapper
+    .auth-block
+      .auth-block-close-btn Desktop authorization block close button
+      .auth-container
+        ul
+          li.sign-in(data-class="sign-in-tab") sign in
+          li.sign-up(data-class="sign-up-tab") sign up
+        form.login
+          label
+            p Login
+            input(type="text" placeholder="Login")
+          label
+            p Password
+            input(type="password" placeholder="Password")
+          label
+            input(type="checkbox" name="remember")
+            p Remember me
+          input(type="submit" value="login")
+          a(href="/") Forget password?
+        form.register
+          label
+            p Name
+            input(type="text" placeholder="Name")
+          label
+            p Last name
+            input(type="text" placeholder="Last name")
+          label
+            p Mail
+            input(type="text" placeholder="Mail")
+          label
+            p Password
+            input(type="password" placeholder="Password")
+          input(type="submit" value="register")

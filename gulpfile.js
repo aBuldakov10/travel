@@ -1,99 +1,97 @@
-const gulp = require('gulp'), // Подключаем Gulp
-  plumber = require('gulp-plumber'), // Формирование вывод об ошибке не прерывая работу gulp
-  postcss = require('gulp-postcss'), // Использование нескольких css плагинов в одном
-  sass = require('gulp-sass'), // Подключаем Sass пакет
-  mqpacker = require('css-mqpacker'), // Оптимизация медиа запросов
-  csso = require('gulp-csso'), // Минификатор css
-  scsslint = require('gulp-scss-lint'), // Проверка стилистики кода
-  autoprefixer = require('autoprefixer'), // Проставлет вендорные префиксы в CSS для поддержки старых браузеров
-  unprefix = require('postcss-unprefix'), // Убрать префиксы
-  pug = require('gulp-pug'), // Подключение препроцессора pug
+const gulp = require('gulp'),
+  plumber = require('gulp-plumber'),
+  postcss = require('gulp-postcss'),
+  sass = require('gulp-sass'),
+  mqpacker = require('css-mqpacker'),
+  csso = require('gulp-csso'),
+  autoprefixer = require('autoprefixer'),
+  unprefix = require('postcss-unprefix'),
+  pug = require('gulp-pug'),
   remember = require('gulp-remember'),
-  imagemin = require('gulp-imagemin'), // Сжатие изображение
-  uglifyJS = require('gulp-uglify'), // Минимизация script
-  babel = require('gulp-babel'), // Преобразование es6 в es5
-  sourcemaps = require('gulp-sourcemaps'), // Добавление карты сайта
-  concat = require('gulp-concat'), // Объединение файлов
-  clean = require('gulp-clean'), // Очистить сборочную директорию
-  browserSync = require('browser-sync'); // Подключаем Browser Sync
+  imagemin = require('gulp-imagemin'),
+  uglifyJS = require('gulp-uglify'),
+  babel = require('gulp-babel'),
+  sourcemaps = require('gulp-sourcemaps'),
+  concat = require('gulp-concat'),
+  clean = require('gulp-clean'),
+  browserSync = require('browser-sync');
 
 // Dev tasks
-gulp.task('pug', function () { // Создаем таск pug
-  return gulp.src('app/templates/*.pug') // Берем источник
-    .pipe(pug({pretty: true})) // Преобразование html для читабельности
-    .pipe(gulp.dest('app')) // Выгружаем результата в папку app
-    .pipe(browserSync.reload({stream: true})) // Обновляем html на странице при изменении
+gulp.task('pug', function () {
+  return gulp.src('app/templates/*.pug')
+    .pipe(pug({pretty: true}))
+    .pipe(gulp.dest('app'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('sass', function () { // Создаем таск sass
-  return gulp.src('./app/scss/**/*.scss') // Берем источник
-    .pipe(sourcemaps.init()) // Инициализация создания Source Maps
-    .pipe(sass({ outputStyle: 'expanded' })) // Преобразуем sass в css посредством gulp-sass
-    .pipe(postcss([unprefix(), autoprefixer(), mqpacker({ sort: true })])) // Поставить префиксы, перенести
-    // медиа запросы в конец файла
-    .pipe(sourcemaps.write('.')) // Путь для записи SourceMaps
-    .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
-    .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
+gulp.task('sass', function () {
+  return gulp.src('./app/scss/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(postcss([unprefix(), autoprefixer(), mqpacker({ sort: true })]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('app/css'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('pictures-min', function () { // Минимизация изображений
+gulp.task('pictures-min', function () {
   return gulp.src('app/pictures/**/*.*')
     .pipe(imagemin())
     .pipe(gulp.dest('app/img'))
     .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('js', function () { // Таск для преобразования ^es6 в es5 для браузера
+gulp.task('js', function () {
   return gulp.src(['app/script/slick.js', 'app/script/main.js'])
-    .pipe(sourcemaps.init()) // Инициализация создания Source Maps
+    .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
-    .pipe(babel({presets: [["@babel/preset-env"]]})) // Преобразование ^es6 в es5 для браузера
+    .pipe(babel({presets: [["@babel/preset-env"]]}))
     .pipe(gulp.dest('app/js'))
     .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('browser-sync', function () { // Создаем таск browser-sync
-  browserSync({ // Выполняем browserSync
-    server: { // Определяем параметры сервера
-      baseDir: 'app' // Директория для сервера - app
+gulp.task('browser-sync', function () {
+  browserSync({
+    server: {
+      baseDir: 'app'
     },
-    notify: false // Отключаем уведомления
+    notify: false
   });
 });
 
 gulp.task('watch', function () {
-  gulp.watch('app/scss/**/*.scss', gulp.parallel('sass')); // Наблюдение за sass файлами
-  gulp.watch('app/templates/**/*', gulp.parallel('pug')); // Наблюдение за pug файлами
-  gulp.watch('app/pictures/*.*', gulp.parallel('pictures-min')); // Наблюдение за файлами изображений
-  gulp.watch('app/script/*.js', gulp.parallel('js')); // Наблюдение за script файлами
+  gulp.watch('app/scss/**/*.scss', gulp.parallel('sass'));
+  gulp.watch('app/templates/**/*', gulp.parallel('pug'));
+  gulp.watch('app/pictures/*.*', gulp.parallel('pictures-min'));
+  gulp.watch('app/script/*.js', gulp.parallel('js'));
 });
 
 gulp.task('compile', gulp.parallel('pug', 'sass', 'pictures-min', 'js'));
 
 gulp.task('watch-changes', gulp.parallel('browser-sync', 'watch'));
 
-gulp.task('run', gulp.series('compile', 'watch-changes')); // Таск для запуска gulp
+gulp.task('default', gulp.series('compile', 'watch-changes'));
 
 //Build tasks
-gulp.task('clean', function () { // Таск для очистки сборочной директории
-  return gulp.src('build/**/*.*') // Указать путь ко всем файлам в build и подпапках
-    .pipe(clean()) // Очистка папки build и всех подпапок
+gulp.task('clean', function () {
+  return gulp.src('build/**/*.*')
+    .pipe(clean())
 });
 
-gulp.task ('html', function () { // Таск для переноса всех html из app в build
+gulp.task ('html', function () {
   return gulp.src('app/*.html')
     .pipe(gulp.dest('build'))
 });
 
-gulp.task ('css', function () { // Таск для переноса всех css из app в build
+gulp.task ('css', function () {
   return gulp.src('app/css/**/*.css')
-    .pipe(csso()) // Минимизация css
+    .pipe(csso())
     .pipe(gulp.dest('build/css'))
 });
 
-gulp.task ('script', function () { // Таск для переноса всех script из app в build
+gulp.task ('script', function () {
   return gulp.src('app/js/*.js')
-    .pipe(uglifyJS()) // Минимизация script
+    .pipe(uglifyJS())
     .pipe(gulp.dest('build/js/main.min.js'))
 });
 

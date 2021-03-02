@@ -1,3 +1,4 @@
+// General header style
 header {
   font-family: $montserrat;
   position: fixed;
@@ -19,9 +20,64 @@ header {
   }
 }
 
+.header-row {
+  justify-content: space-between;
+  padding: 10px 0;
+
+  @include media(min, 1024) {
+    padding: 15px 20px;
+
+    &:first-child {
+      @include font-size(14);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      letter-spacing: .5px;
+      border-bottom: 3px solid rgba(255, 255, 255, .4);
+    }
+  }
+}
+
 .logo {
-  &:hover {
-    cursor: pointer;
+  font-weight: $medium;
+
+  @include media(min, 1024) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.logo-name {
+  @include font-size(34);
+  letter-spacing: -.5px;
+  text-transform: capitalize;
+
+  span {
+    color: $primary;
+
+    &+span {
+      margin-left: -7px;
+    }
+  }
+
+  @include media(min, 768) {
+    span+span {
+      margin-left: -9px;
+    }
+  }
+
+  @include media(min, 1224) {
+    letter-spacing: -1px;
+  }
+}
+
+.logo-description {
+  @include font-size(9);
+  letter-spacing: .7px;
+  text-transform: uppercase;
+
+  @include media(min, 768) {
+    letter-spacing: 1px;
   }
 }
 
@@ -41,10 +97,25 @@ header {
   }
 }
 
+.mob-menu,
+.auth-block {
+  transform: translateX(350px);
+  position: absolute;
+  right: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  max-width: 350px;
+  width: 100%;
+  height: calc(100vh - 56px);
+  background: rgba(0, 0, 0, .9);
+  border-top: 3px solid $light-txt;
+  transition: .05s ease;
+}
+
 // Mobile header style
 .header-mob {
-  padding: 0 20px;
   position: relative;
+  padding: 0 20px;
 
   @include media(min, 1024) {
     display: none;
@@ -54,6 +125,7 @@ header {
 .mob-burger span,
 .mob-burger span:before,
 .mob-burger span:after {
+  width: 100%;
   height: 3px;
   background: $light-txt;
   transition: .1s ease;
@@ -66,16 +138,13 @@ header {
   align-self: center;
   width: 25px;
   height: 25px;
-  position: relative;
 
   span {
     position: relative;
-    width: 100%;
 
-    &:before,
-    &:after {
+    &:after,
+    &:before {
       @include pseudo();
-      width: 100%;
     }
 
     &:before {
@@ -88,58 +157,25 @@ header {
   }
 }
 
-.open-menu {
-  span {
-    background: transparent;
-
-    &:before {
-      top: 0;
-      transform: rotate(45deg);
-    }
-
-    &:after {
-      bottom: 0;
-      transform: rotate(-45deg);
-    }
-  }
-}
-
 .mob-menu {
-  position: absolute;
-  right: 0;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  max-width: 350px;
-  width: 100%;
-  height: calc(100vh - 56px);
-  background: rgba(0, 0, 0, .9);
-  border-top: 3px solid $light-txt;
-  transform: translateX(350px);
-  transition: .3s ease;
-  overflow: auto;
-
   li {
     margin: 0 auto;
     padding: 20px 0;
     max-width: 250px;
     text-align: center;
-    //text-transform: uppercase;
     border-bottom: 1px solid rgba(255, 255, 255, .5);
 
     &:last-child {
-      border-bottom: 0;
       display: flex;
       justify-content: space-around;
+      border-bottom: 0;
     }
   }
 }
 
-.show-menu {
-  transform: translateX(0);
-  overflow: auto;
-}
-
 .mob-menu-auth-link {
+  color: $light-txt;
+
   &:before {
     @include font-size(20);
     font-family: FontAwesome;
@@ -162,28 +198,11 @@ header {
   background: rgba(0, 0, 0, .9);
 }
 
-.header-row,
-.social-wrap,
+.desk-menu,
 .auth-wrap,
-.desk-menu {
+.header-row,
+.social-wrap {
   display: flex;
-}
-
-.header-row {
-  justify-content: space-between;
-  padding: 10px 0;
-
-  @include media(min, 1024) {
-    padding: 15px 20px;
-
-    &:first-child {
-      @include font-size(14);
-      padding-top: 20px;
-      padding-bottom: 20px;
-      letter-spacing: .5px;
-      border-bottom: 3px solid rgba(255, 255, 255, .4);
-    }
-  }
 }
 
 .contact-link {
@@ -223,9 +242,9 @@ header {
   a {
     @include font-size(0);
     position: relative;
+    margin-right: 20px;
     width: 20px;
     height: 100%;
-    margin-right: 20px;
     display: flex;
     justify-content: center;
 
@@ -249,9 +268,9 @@ header {
 
 .auth-wrap {
   p {
+    position: relative;
     margin-right: 30px;
     padding-left: 23px;
-    position: relative;
     text-transform: capitalize;
 
     &:last-child {
@@ -274,43 +293,8 @@ header {
   }
 }
 
-.logo {
-  font-weight: $medium;
-}
-
-.logo-name {
-  @include font-size(34);
-  letter-spacing: -1px;
-  text-transform: capitalize;
-
-  span {
-    color: $primary;
-
-    &+span {
-      margin-left: -7px;
-    }
-  }
-
-  @include media(min, 768) {
-    span+span {
-      margin-left: -9px;
-    }
-  }
-}
-
-.logo-description {
-  @include font-size(9);
-  letter-spacing: .7px;
-  text-transform: uppercase;
-
-  @include media(min, 768) {
-    letter-spacing: 1px;
-  }
-}
-
 .desk-menu {
   align-items: center;
-  //text-transform: uppercase;
 
   li {
     margin: 0 50px 0 0;
@@ -329,12 +313,12 @@ header {
 
       &:after {
         @include pseudo();
-        background-color: $primary;
-        width: 0;
-        height: 2px;
         transform: translateX(-50%);
         top: 25px;
         left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: $primary;
         transition: width .2s ease-in-out;
       }
 
@@ -343,4 +327,213 @@ header {
       }
     }
   }
+}
+
+// Authorization menu style
+.auth-block {
+  color: $light-txt;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    li {
+      margin-bottom: 0;
+
+      &:before {
+        @include font-size(20);
+        font-family: FontAwesome;
+        margin-right: 10px;
+        color: #f9e03b;
+      }
+    }
+  }
+
+  .login {
+    label:nth-child(3) {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin-bottom: 0;
+        margin-left: 10px;
+      }
+    }
+
+    a {
+      @include font-size(16);
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  form {
+    display: none;
+
+    label {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 7px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 7px 10px;
+      width: 100%;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      display: block;
+      margin: 50px auto 0;
+      padding: 5px 0;
+      width: 120px;
+      background: $primary;
+    }
+  }
+
+  @include media(min, 1024) {
+    transform: translateX(450px);
+    top: 0;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    max-width: 450px;
+    height: 100vh;
+    border-top: 0;
+  }
+}
+
+.auth-block-close-btn {
+  display: none;
+
+  @include media(min, 1024) {
+    @include font-size(0);
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+
+    &:before,
+    &:after {
+      content: '';
+      @include centering(xy);
+      width: 100%;
+      height: 4px;
+      background: $light-txt;
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+  }
+}
+
+.auth-container {
+  margin: 0 auto;
+  max-width: 250px;
+  width: 100%;
+
+  @include media(min, 1024) {
+    max-width: 350px;
+  }
+}
+
+.sign-in,
+.sign-up,
+.auth-block-close-btn {
+  @include media(min, 1024) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// Open menu style
+.open-menu .mob-menu,
+.open-submenu .auth-block {
+  transform: translateX(0);
+  overflow-y: auto;
+}
+
+.open-menu {
+  .mob-burger {
+    span {
+      background: transparent;
+
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .mob-menu-wrapper,
+  .auth-block-wrapper {
+    position: absolute;
+    width: 100%;
+  }
+
+  .mob-menu-wrapper {
+    right: 0;
+    height: 100vh;
+  }
+}
+
+// Open submenu style
+.open-submenu {
+  .mob-burger {
+    span {
+      background: $light-txt;
+
+      &:before,
+      &:after {
+        left: -3px;
+        width: 60%;
+      }
+
+      &:before {
+        top: 4px;
+      }
+
+      &:after {
+        bottom: 5px;
+      }
+    }
+  }
+
+  @include media(min, 1024) {
+    .auth-block-wrapper {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+}
+
+.sign-in-tab .sign-in,
+.sign-up-tab .sign-up {
+  color: $primary;
+}
+
+.sign-in-tab .login,
+.sign-up-tab .register {
+  display: block;
 }

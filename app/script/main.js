@@ -1,24 +1,28 @@
 (function () {
   /** General variables **/
   const $window = $(window),
-        $bodyHtml = $('body, html'),
-        $body = $('body'),
-        $upButton = $('.up-btn'),
-        $logo = $('.logo'),
-        $mobBurger = $('.mob-burger'),
-        $mobMenu = $('.mob-menu'),
-        $headerMob = $('.header-mob'),
-        $headerDesk = $('.header-desk'),
-        $menuItem = $('.menu a'),
-        $location = $('#location'),
-        $duration = $('.duration input'),
-        $persons = $('.persons input'),
-        $searchHotelField = $('.search-form input[type="text"]'),
-        $searchHotelBtn = $('.search-form input[type="submit"]'),
-        $sendFormErrorTip = $('.send-form-tooltip'),
-        searchLocationReg = /(^([a-zA-Z]+[ '-][a-zA-Z]+[ '-][a-zA-Z]+$)|^([a-zA-Z]+[ '-][a-zA-Z]+$)|^[a-zA-Z]+$)/gm,
-        searchDateReg = /^\d{2}[ \/\.-]\d{2}[ \/\.-]\d{4}/gm,
-        searchPersonReg = /^\d+$/gm;
+    $bodyHtml = $('body, html'),
+    $body = $('body'),
+    $header = $('header'),
+    $upButton = $('.up-btn'),
+    $logo = $('.logo'),
+    $mobBurger = $('.mob-burger'),
+    $mobMenuAuthLink = $('.mob-menu-auth-link'),
+    $deskMenuAuthLink = $('.desk-menu-auth-link'),
+    $authBlockCloseBtn = $('.auth-block-close-btn'),
+    $headerMob = $('.header-mob'),
+    $headerDesk = $('.header-desk'),
+    $authBlock = $('.auth-block'),
+    $menuItem = $('.menu a'),
+    $location = $('#location'),
+    $duration = $('.duration input'),
+    $persons = $('.persons input'),
+    $searchHotelField = $('.search-form input[type="text"]'),
+    $searchHotelBtn = $('.search-form input[type="submit"]'),
+    $sendFormErrorTip = $('.send-form-tooltip'),
+    searchLocationReg = /(^([a-zA-Z]+[ '-][a-zA-Z]+[ '-][a-zA-Z]+$)|^([a-zA-Z]+[ '-][a-zA-Z]+$)|^[a-zA-Z]+$)/gm,
+    searchDateReg = /^\d{2}[ \/\.-]\d{2}[ \/\.-]\d{4}/gm,
+    searchPersonReg = /^\d+$/gm;
 
   var searchHotelObj = {
         location: '',
@@ -49,20 +53,62 @@
 
   /** Header mobile burger menu **/
   $mobBurger.on('click', function () {
-    $body.toggleClass('no-scroll blur');
-    $mobBurger.toggleClass('open-menu');
-    $mobMenu.toggleClass('show-menu');
+    // Close authorization submenu
+    if ($header.hasClass('open-submenu')) {
+      $header.removeClass('open-submenu');
+      $authBlock.removeClass('sign-in-tab sign-up-tab');
+    }
+    // Close main menu
+    else {
+      $body.toggleClass('no-scroll blur');
+      $header.toggleClass('open-menu');
+    }
   });
 
   /** Hide burger menu on resize/change orientation **/
   // Hide mobile menu function
   function hideMobileMenu() {
     $body.removeClass('no-scroll blur');
-    $mobBurger.removeClass('open-menu');
-    $mobMenu.removeClass('show-menu');
+    $header.removeClass('open-menu open-submenu');
+    $authBlock.removeClass('sign-in-tab sign-up-tab');
   }
 
   $window.on('resize orientationchange', function () {
+    hideMobileMenu();
+  });
+
+  /** Hide/show authorization submenu **/
+  // Choose authorization form function
+  function chooseAuthForm(param) {
+    var dataClass = param.attr('data-class');
+
+    $authBlock.addClass(dataClass);
+  }
+
+  // Open mobile authorization submenu
+  $mobMenuAuthLink.on('click', function () {
+    $header.addClass('open-submenu');
+
+    chooseAuthForm($(this));
+  });
+
+  // Toggle mobile authorization menu
+  $('li', $authBlock).on('click', function () {
+    $authBlock.removeClass('sign-in-tab sign-up-tab');
+
+    chooseAuthForm($(this));
+  });
+
+  // Open desktop authorization submenu
+  $deskMenuAuthLink.on('click', function () {
+    $body.addClass('no-scroll blur');
+    $header.addClass('open-submenu');
+
+    chooseAuthForm($(this));
+  });
+
+  // Hide desktop authorization submenu
+  $authBlockCloseBtn.on('click', function () {
     hideMobileMenu();
   });
 
@@ -144,31 +190,31 @@
     var durationDate = $(this).val().match(searchDateReg),
         thisId = $(this).attr('id');
 
-      // If date is correct
-      if(durationDate) {
-        $(this).removeClass('incorrect');
+    // If date is correct
+    if(durationDate) {
+      $(this).removeClass('incorrect');
 
-        // Execute validate function with needed parameter
-        correctData(durationDate[0]);
+      // Execute validate function with needed parameter
+      correctData(durationDate[0]);
 
-        // If check-in field
-        if (thisId === 'check-in') {
-          (correctData(durationDate[0]) === false) ? $(this).addClass('incorrect') : searchHotelObj.checkIn = durationDate[0];
-        }
-        // If check-out field
-        else {
-          (correctData(durationDate[0]) === false) ? $(this).addClass('incorrect') : searchHotelObj.checkOut = durationDate[0];
-        }
+      // If check-in field
+      if (thisId === 'check-in') {
+        (correctData(durationDate[0]) === false) ? $(this).addClass('incorrect') : searchHotelObj.checkIn = durationDate[0];
       }
-      // Leave empty check-in or check-out value
-      else if ($(this).val().length === 0) {
-        $(this).removeClass('incorrect');
-        (thisId === 'check-in') ? searchHotelObj.checkIn = '' : searchHotelObj.checkOut = '';
-      }
-      // If date is incorrect
+      // If check-out field
       else {
-        $(this).addClass('incorrect');
+        (correctData(durationDate[0]) === false) ? $(this).addClass('incorrect') : searchHotelObj.checkOut = durationDate[0];
       }
+    }
+    // Leave empty check-in or check-out value
+    else if ($(this).val().length === 0) {
+      $(this).removeClass('incorrect');
+      (thisId === 'check-in') ? searchHotelObj.checkIn = '' : searchHotelObj.checkOut = '';
+    }
+    // If date is incorrect
+    else {
+      $(this).addClass('incorrect');
+    }
   });
 
   // Persons amount validation
@@ -224,7 +270,7 @@
   });
 
   /** Slick plugin **/
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.slider-wrap').slick(
       {
         autoplay: true,

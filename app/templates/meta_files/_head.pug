@@ -13,3 +13,28 @@ head
 
   // Include custom style
   link(href='css/main.css' type='text/css' rel='stylesheet')
+
+  // Script
+  noscript
+    style.
+      body {
+        padding-top: 52px;
+      }
+
+      .no-script-msg {
+        position: fixed;
+        top: 0;
+        padding: 12px 15px;
+        width: 100%;
+        font-size: 13px;
+        background: #f9e03b;
+        text-align: center;
+        z-index: 99;
+      }
+
+      @media only screen and (min-width: 348px) {
+        body {
+          padding-top: 38px;
+        }
+      }
+    p.no-script-msg You need to enable javascript to use this app correct
