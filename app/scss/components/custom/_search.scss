@@ -22,18 +22,18 @@
     }
   }
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     max-width: 500px;
     margin-top: 3.35em;
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     input {
       height: 40px;
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     position: relative;
 
     .persons {
@@ -45,7 +45,7 @@
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     display: flex;
     max-width: 1216px;
 
@@ -75,7 +75,7 @@
     text-transform: uppercase;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     label {
       width: auto;
     }
@@ -101,7 +101,7 @@
 #location {
   text-transform: capitalize;
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     width: 240px;
   }
 }
@@ -123,13 +123,13 @@
   background: #0095e6;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     position: absolute;
     right: 0;
     bottom: 0;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     position: static;
     margin-left: 30px;
   }

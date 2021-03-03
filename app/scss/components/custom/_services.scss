@@ -1,19 +1,19 @@
 .service-list {
   margin-top: 3.333em;
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     display: flex;
     flex-wrap: wrap;
     max-width: 900px;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     max-width: 1245px;
     padding-bottom: 15px;
   }
@@ -32,7 +32,7 @@
     color: $secondary;
   }
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     padding-left: 110px;
 
     &:before {
@@ -40,7 +40,7 @@
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     width: 50%;
     margin-bottom: 50px;
     padding-right: 40px;
@@ -59,7 +59,7 @@
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     padding-right: 90px;
     padding-left: 110px;
 

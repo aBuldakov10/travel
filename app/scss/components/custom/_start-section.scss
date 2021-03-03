@@ -4,7 +4,7 @@
   padding-top: 130px;
   padding-bottom: 70px;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     padding-top: 330px;
     padding-bottom: 170px;
   }
@@ -35,7 +35,7 @@
     margin-bottom: 2.778em;
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     max-width: 760px;
 
     h1 {
@@ -48,7 +48,7 @@
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     max-width: 800px;
   }
 }

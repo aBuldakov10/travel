@@ -6,13 +6,13 @@
 .blog-btn {
   @extend .grid-btn;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     @include centering(x);
     top: -18px;
     margin-top: 0;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     top: -23px;
   }
 }
@@ -27,11 +27,11 @@
 .blog-container {
   margin-top: 20px;
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     margin-top: 0;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     position: relative;
     margin: 0 auto;
     padding: 40px 0 25px;
@@ -39,7 +39,7 @@
     text-align: center;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     padding-top: 55px;
     padding-bottom: 35px;
   }

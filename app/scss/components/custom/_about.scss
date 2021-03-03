@@ -6,7 +6,7 @@
     display: none;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     display: flex;
     justify-content: center;
     background-image: url("/img/about/right-side-revert-XL.jpg");
@@ -18,7 +18,7 @@
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     padding-top: 0;
     padding-bottom: 0;
 
@@ -40,12 +40,12 @@
     margin-top: 2.5em;
   }
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     max-width: 530px;
     margin: 0 auto;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     margin-right: 0;
     margin-left: 0;
     padding-right: 0;
@@ -57,7 +57,7 @@
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     padding: 70px 60px;
     max-width: none;
   }

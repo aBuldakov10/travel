@@ -8,13 +8,13 @@
     margin: 3.75em auto 0;
   }
 
-  @include media(max, 768) {
+  @include media(max, $md) {
     .side-container {
       padding: 0;
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     .container {
       display: flex;
       max-width: 900px;
@@ -31,7 +31,7 @@
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     .container {
       max-width: 1295px;
     }
@@ -53,16 +53,16 @@
   .car {
     background: $inactive-status;
 
-    @include media(min, 1224) {
+    @include media(min, $lg-sm) {
       z-index: 1;
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     margin: 2.5em 0;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     display: flex;
     max-width: none;
     height: 100px;
@@ -84,7 +84,7 @@
   text-transform: capitalize;
 
   &:nth-child(n+2) {
-    @include media(min, 1224) {
+    @include media(min, $lg-sm) {
       margin-left: -4%;
       padding-left: 117px;
 
@@ -100,11 +100,11 @@
     font-family: FontAwesome;
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     min-height: 50px;
   }
 
-  @include media(max, 1223) {
+  @include media(max, $lg-sm - 1) {
     &:last-child {
       background: $secondary;
 
@@ -128,7 +128,7 @@
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     padding-left: 70px;
     width: 35.9%;
 

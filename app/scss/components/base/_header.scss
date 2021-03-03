@@ -15,7 +15,7 @@ header {
     color: $light-txt;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     background: rgba(0, 0, 0, .4);
   }
 }
@@ -24,7 +24,7 @@ header {
   justify-content: space-between;
   padding: 10px 0;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     padding: 15px 20px;
 
     &:first-child {
@@ -40,7 +40,7 @@ header {
 .logo {
   font-weight: $medium;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     &:hover {
       cursor: pointer;
     }
@@ -60,13 +60,13 @@ header {
     }
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     span+span {
       margin-left: -9px;
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     letter-spacing: -1px;
   }
 }
@@ -76,7 +76,7 @@ header {
   letter-spacing: .7px;
   text-transform: uppercase;
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     letter-spacing: 1px;
   }
 }
@@ -117,7 +117,7 @@ header {
   position: relative;
   padding: 0 20px;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     display: none;
   }
 }
@@ -188,7 +188,7 @@ header {
 .header-desk {
   display: none;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     display: block;
     transition: ease .2s;
   }
@@ -398,7 +398,7 @@ header {
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     transform: translateX(450px);
     top: 0;
     padding-top: 70px;
@@ -412,7 +412,7 @@ header {
 .auth-block-close-btn {
   display: none;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     @include font-size(0);
     display: block;
     position: absolute;
@@ -445,7 +445,7 @@ header {
   max-width: 250px;
   width: 100%;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     max-width: 350px;
   }
 }
@@ -453,7 +453,7 @@ header {
 .sign-in,
 .sign-up,
 .auth-block-close-btn {
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     &:hover {
       cursor: pointer;
     }
@@ -518,7 +518,7 @@ header {
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     .auth-block-wrapper {
       position: absolute;
       top: 0;

@@ -3,7 +3,7 @@
     margin-top: 0;
   }
 
-  @include media(min, 1400) {
+  @include media(min, $lg) {
     max-width: 1365px;
     margin: 0 auto;
   }
@@ -12,21 +12,21 @@
 .tour-desc-img {
   display: none;
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     display: block;
     width: 750px;
     margin: 0 auto;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     margin-left: 60px;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     width: auto;
   }
 
-  @include media(min, 1400) {
+  @include media(min, $lg) {
     margin-right: 0;
     margin-left: 0;
   }
@@ -36,13 +36,13 @@
   padding: 0 20px;
   background: #fff;
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     margin: 0 auto;
     max-width: 600px;
     width: 100%;
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     @include centering(xy);
     padding: 45px;
     border-radius: 10px;
@@ -50,13 +50,13 @@
     background: rgba(255, 255, 255, .85);
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     transform: translateY(-50%);
     right: 60px;
     left: auto;
   }
 
-  @include media(min, 1400) {
+  @include media(min, $lg) {
     right: 0;
     background: #fff;
   }
@@ -74,7 +74,7 @@
 
 .tour-desc-title,
 .tour-desc-period {
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     text-align: left;
   }
 }
@@ -110,7 +110,7 @@
     @include font-size(55);
   }
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     display: flex;
     justify-content: space-between;
 
@@ -127,7 +127,7 @@
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     li {
       text-align: left;
     }
@@ -138,13 +138,13 @@
   margin-top: 1.666em;
   text-align: center;
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     justify-content: flex-start;
   }
 }
@@ -154,7 +154,7 @@
   font-weight: $black;
   margin-bottom: .75em;
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     margin-right: 85px;
     margin-bottom: 0;
   }

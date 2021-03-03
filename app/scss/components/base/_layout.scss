@@ -28,7 +28,7 @@ section {
   position: relative;
   padding: 50px 0;
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     padding-top: 70px;
     padding-bottom: 80px;
   }
@@ -74,26 +74,6 @@ button {
     color: $light-txt;
     background-image: linear-gradient(to bottom, #c6ac06, #bfa70a, #b9a10d, #b29c0f, #ac9711);
   }
-}
-
-h2, h3 {
-  @include font-size(25);
-  text-transform: capitalize;
-  text-align: center;
-
-  @include media(min, 768) {
-    @include font-size(40);
-  }
-}
-
-h2 {
-  font-weight: $black;
-  margin-bottom: .5em;
-}
-
-h3 {
-  font-weight: $medium;
-  margin-bottom: .875em;
 }
 
 // General font icons
@@ -151,12 +131,12 @@ h3 {
   width: 150px;
   height: 40px;
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     width: 180px;
     height: 45px;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     width: 215px;
     height: 55px;
   }
@@ -174,7 +154,7 @@ h3 {
   position: relative;
   z-index: 1;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     display: flex;
     justify-content: space-between;
   }
@@ -199,7 +179,7 @@ h3 {
     margin: 0 auto;
   }
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     display: flex;
     max-width: none;
     text-align: left;
@@ -212,14 +192,14 @@ h3 {
     }
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     img {
       width: 250px;
       margin-left: 0;
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     display: block;
     margin: 0 10px;
     padding: 0;
@@ -230,7 +210,7 @@ h3 {
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     margin: 0;
     max-width: 380px;
   }
@@ -245,11 +225,11 @@ h3 {
   height: 50px;
   background: $secondary;
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     height: 205px;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     height: 255px;
   }
 }
@@ -261,7 +241,7 @@ h3 {
   height: 35px;
   margin-top: 18px;
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     width: 175px;
     height: 45px;
   }

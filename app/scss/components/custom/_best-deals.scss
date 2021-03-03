@@ -6,17 +6,17 @@
 .grid-item-container {
   padding-top: 18px;
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     padding-top: 0;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     padding: 18px 15px 120px;
     max-width: 380px;
     text-align: center;
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     padding-bottom: 135px;
   }
 }
@@ -38,19 +38,19 @@
   @extend .desc-txt;
   margin: 5px 0 20px;
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     margin-bottom: 0;
   }
 }
 
 .book-now-block {
-  @include media(min, 500) {
+  @include media(min, $sm) {
     display: flex;
     justify-content: space-between;
     max-width: 250px;
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     @include centering(x);
     bottom: 20px;
     display: block;
@@ -62,7 +62,7 @@
   @include font-size(30);
   font-weight: $black;
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     margin-top: 18px;
     align-self: center;
   }

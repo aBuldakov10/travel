@@ -1,26 +1,26 @@
 // Import custom components
-@import 'assets/_layout';
+@import 'base/_layout';
 
-@import 'assets/_header';
+@import 'base/_header';
 
-@import 'assets/_start-section';
+@import 'custom/_start-section';
 
-@import 'assets/_search';
+@import 'custom/_search';
 
-@import 'assets/_about';
+@import 'custom/_about';
 
-@import 'assets/_services';
+@import 'custom/_services';
 
-@import 'assets/_budget-packages';
+@import 'custom/_budget-packages';
 
-@import 'assets/_tour-status';
+@import 'custom/_tour-status';
 
-@import 'assets/_best-deals';
+@import 'custom/_best-deals';
 
-@import 'assets/_blog';
+@import 'custom/_blog';
 
-@import 'assets/_slide-show';
+@import 'custom/_slide-show';
 
-@import 'assets/_customer-reviews';
+@import 'custom/_customer-reviews';
 
-@import 'assets/_footer';
+@import 'base/_footer';

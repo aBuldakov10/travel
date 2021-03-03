@@ -15,11 +15,11 @@
     color: $primary;
   }
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     padding-bottom: 155px;
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     padding-bottom: 170px;
 
     &:after {
@@ -27,7 +27,7 @@
     }
   }
 
-  @include media(min, 1024) {
+  @include media(min, $md-lg) {
     padding-bottom: 190px;
 
     &:after {
@@ -35,7 +35,7 @@
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     padding-top: 140px;
     padding-bottom: 230px;
 
@@ -55,7 +55,7 @@
 .footer-contacts {
   padding: 60px 20px 50px;
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     padding-top: 90px;
     padding-bottom: 80px;
   }
@@ -107,7 +107,7 @@
     }
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     display: flex;
     justify-content: space-between;
     max-width: 800px;
@@ -140,7 +140,7 @@
     }
   }
 
-  @include media(min, 1224) {
+  @include media(min, $lg-sm) {
     margin-bottom: 110px;
     max-width: 1025px;
 
@@ -226,14 +226,14 @@
     }
   }
 
-  @include media(min, 500) {
+  @include media(min, $sm) {
     li {
       width: 65px;
       height: 65px;
     }
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     max-width: none;
 
     li {
@@ -306,7 +306,7 @@
     color: transparent;
   }
 
-  @include media(min, 768) {
+  @include media(min, $md) {
     width: 55px;
     height: 55px;
     bottom: 30px;

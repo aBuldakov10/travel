@@ -2,18 +2,17 @@ doctype html
 html(lang='en')
   include meta_files/_head
   body
-    include components/_header
+    include components/base/_header
     main
-      include components/_start-section
-      include components/_search
-      include components/_about
-      include components/_services
-      include components/_budget-packages
-      include components/_tour-status
-      include components/_best-deals
-      include components/_blog
-      include components/_slide-show
-      include components/_customer-reviews
-    footer
-      include components/_footer
+      include components/custom/_start-section
+      include components/custom/_search
+      include components/custom/_about
+      include components/custom/_services
+      include components/custom/_budget-packages
+      include components/custom/_tour-status
+      include components/custom/_best-deals
+      include components/custom/_blog
+      include components/custom/_slide-show
+      include components/custom/_customer-reviews
+    include components/base/_footer
     include meta_files/_footer_scripts
