@@ -1,5 +1,5 @@
 .about {
-  background: url("/img/about/right-side-XL.jpg") no-repeat fixed;
+  background: url("../img/about/right-side-XL.jpg") no-repeat fixed;
   background-size: cover;
 
   img {
@@ -9,7 +9,7 @@
   @include media(min, $md-lg) {
     display: flex;
     justify-content: center;
-    background-image: url("/img/about/right-side-revert-XL.jpg");
+    background-image: url("../img/about/right-side-revert-XL.jpg");
 
     img {
       display: block;

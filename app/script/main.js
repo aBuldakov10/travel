@@ -20,6 +20,9 @@
     $searchHotelField = $('.search-form input[type="text"]'),
     $searchHotelBtn = $('.search-form input[type="submit"]'),
     $sendFormErrorTip = $('.send-form-tooltip'),
+    $statusLineItem = $('.status-line-item'),
+    $statusLineContentItem = $('.status-line-content .desc-txt'),
+    $customerSliderWrap = $('.slider-wrap'),
     searchLocationReg = /(^([a-zA-Z]+[ '-][a-zA-Z]+[ '-][a-zA-Z]+$)|^([a-zA-Z]+[ '-][a-zA-Z]+$)|^[a-zA-Z]+$)/gm,
     searchDateReg = /^\d{2}[ \/\.-]\d{2}[ \/\.-]\d{4}/gm,
     searchPersonReg = /^\d+$/gm;
@@ -269,9 +272,22 @@
     }
   });
 
+  /** Status line tabs **/
+  $statusLineItem.on('click', function () {
+    if (!$(this).hasClass('active')) {
+      var thisId = $(this).attr('id');
+
+      $statusLineItem.removeClass('active');
+      $(this).addClass('active');
+
+      $statusLineContentItem.addClass('hide');
+      $('.status-line-content .desc-txt[data-id="' + thisId + '"]').removeClass('hide');
+    }
+  });
+
   /** Slick plugin **/
   $(document).ready(function () {
-    $('.slider-wrap').slick(
+    $customerSliderWrap.slick(
       {
         autoplay: true,
         dots: true,

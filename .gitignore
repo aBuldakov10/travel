@@ -3,7 +3,8 @@ node_modules/
 gulpfile.js
 package.json
 package-lock.json
-css/
-js/
-img/
-*.html
+plugin/
+app/css/
+app/js/
+app/img/
+app/*.html

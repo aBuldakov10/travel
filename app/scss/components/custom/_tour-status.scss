@@ -23,7 +23,7 @@
     img {
       display: block;
       width: 300px;
-      align-self: center;
+      align-self: flex-start;
     }
 
     button {
@@ -50,12 +50,23 @@
   max-width: 300px;
   margin: 2.5em auto;
 
+
+
+  .plane {
+    background: $light-txt;
+  }
+
   .car {
     background: $inactive-status;
 
     @include media(min, $lg-sm) {
       z-index: 1;
     }
+  }
+
+  .active {
+    color: $light-txt;
+    background: $secondary;
   }
 
   @include media(min, $md-lg) {
@@ -104,15 +115,22 @@
     min-height: 50px;
   }
 
+  @include media(min, $md-lg) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   @include media(max, $lg-sm - 1) {
-    &:last-child {
+    &:last-child,
+    &:first-child {
       background: $secondary;
 
       &:before {
         z-index: 1;
       }
 
-      &:after {
+      &:not(.active):after {
         content: '';
         background: $light-txt;
         width: 98%;
@@ -135,7 +153,8 @@
     &:first-child {
       z-index: 2;
     }
-    &:last-child {
+
+    &:not(.active):last-child {
       background: $light-txt;
     }
 
@@ -143,9 +162,4 @@
       @include font-size(44);
     }
   }
-}
-
-.active {
-  color: #fff;
-  background: $secondary;
 }

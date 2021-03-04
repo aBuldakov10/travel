@@ -1,16 +1,34 @@
 section.status-section
   .container
-    img(src="/img/windsurfing-XL.png" title='windsurfing' alt='windsurfing' loading="lazy")
+    img(src="img/windsurfing-XL.png" title='windsurfing' alt='windsurfing' loading="lazy")
     .side-container
       h2 trusted since 2001
       h3 We are Travel Agent
       .status-line
-        p.status-line-item.plane.active flight
-        p.status-line-item.car cab
-        p.status-line-item.hotel
+        p(id="flight" class="status-line-item plane active")
+          span flight
+        p(id="cab" class="status-line-item car") cab
+        p(id="hotel" class="status-line-item hotel")
           span hotel
-      p.desc-txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur reprehenderit error, expedita hic
-        | repellendus unde, quae sapiente. Asperiores, nesciunt quasi. Similique, tempore sunt ratione, error quis
-        | fugiat non quos dolor porro nihil, fugit iste neque alias ipsa repudiandae sit at. Quia minima,
-        | cupiditate, officiis beatae provident nihil ipsum voluptatem odio?
+      .status-line-content
+        p(class="desc-txt" data-id="flight") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+          | ultrices tempor nunc et pulvinar. Morbi vehicula tristique ligula, id porta diam egestas sed.
+          | Nulla non pretium dui. Ut eget ipsum mi. Pellentesque habitant morbi tristique senectus et netus
+          | et malesuada fames ac turpis egestas. Cras hendrerit nunc ut orci lacinia, eu dapibus turpis
+          | sollicitudin. Maecenas vitae interdum tortor, eget porta nulla. Curabitur congue magna ut ipsum
+          | mollis, non congue enim semper. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+          | Phasellus vel urna pretium, ullamcorper justo vel, consectetur diam. Pellentesque vestibulum purus
+          | eu ligula accumsan, non volutpat tortor pretium.
+        p(class="desc-txt hide" data-id="cab") Mauris pulvinar diam lorem, ac viverra nisl aliquet nec.
+          | Aliquam eu justo fermentum, lacinia nulla nec, viverra augue. Cras nec augue feugiat, convallis
+          | justo in, tincidunt augue. Pellentesque commodo justo eget ipsum maximus, vitae pellentesque tortor
+          | mollis. Cras tempor erat at erat iaculis vulputate. Sed feugiat massa id magna malesuada, in
+          | posuere libero varius. Phasellus et fermentum lorem. Suspendisse potenti. Donec blandit neque vel
+          | maximus bibendum.
+        p(class="desc-txt hide" data-id="hotel") Nullam placerat turpis tellus, sit amet vulputate ligula
+          | ullamcorper at. Sed velit metus, suscipit nec faucibus ac, convallis eget libero. Nulla porttitor
+          | risus dui, vel mollis diam interdum nec. Praesent at mi sit amet justo luctus sodales. Curabitur
+          | cursus luctus justo, vitae posuere turpis vulputate nec. Quisque eget malesuada velit. Pellentesque
+          | habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ut faucibus
+          | nisl, a posuere magna. Aliquam convallis tellus in velit volutpat, quis interdum elit porttitor.
       button.start-btn click here
