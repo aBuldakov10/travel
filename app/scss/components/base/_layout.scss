@@ -1,4 +1,22 @@
 // General styles
+body {
+  @include media(min, $md-lg) {
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $light-txt;
+      border-radius: 0 10px 10px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $secondary;
+      border-radius: 10px;
+    }
+  }
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -13,10 +31,6 @@ main {
   .header-desk {
     filter: blur(3px);
   }
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 .hide {

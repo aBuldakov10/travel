@@ -1,31 +1,36 @@
 (function () {
   /** General variables **/
   const $window = $(window),
-    $bodyHtml = $('body, html'),
-    $body = $('body'),
-    $header = $('header'),
-    $upButton = $('.up-btn'),
-    $logo = $('.logo'),
-    $mobBurger = $('.mob-burger'),
-    $mobMenuAuthLink = $('.mob-menu-auth-link'),
-    $deskMenuAuthLink = $('.desk-menu-auth-link'),
-    $authBlockCloseBtn = $('.auth-block-close-btn'),
-    $headerMob = $('.header-mob'),
-    $headerDesk = $('.header-desk'),
-    $authBlock = $('.auth-block'),
-    $menuItem = $('.menu a'),
-    $location = $('#location'),
-    $duration = $('.duration input'),
-    $persons = $('.persons input'),
-    $searchHotelField = $('.search-form input[type="text"]'),
-    $searchHotelBtn = $('.search-form input[type="submit"]'),
-    $sendFormErrorTip = $('.send-form-tooltip'),
-    $statusLineItem = $('.status-line-item'),
-    $statusLineContentItem = $('.status-line-content .desc-txt'),
-    $customerSliderWrap = $('.slider-wrap'),
-    searchLocationReg = /(^([a-zA-Z]+[ '-][a-zA-Z]+[ '-][a-zA-Z]+$)|^([a-zA-Z]+[ '-][a-zA-Z]+$)|^[a-zA-Z]+$)/gm,
-    searchDateReg = /^\d{2}[ \/\.-]\d{2}[ \/\.-]\d{4}/gm,
-    searchPersonReg = /^\d+$/gm;
+        $bodyHtml = $('body, html'),
+        $body = $('body'),
+        $header = $('header'),
+        $upButton = $('.up-btn'),
+        $logo = $('.logo'),
+        $mobBurger = $('.mob-burger'),
+        $mobMenuAuthLink = $('.mob-menu-auth-link'),
+        $deskMenuAuthLink = $('.desk-menu-auth-link'),
+        $authBlockCloseBtn = $('.auth-block-close-btn'),
+        $headerMob = $('.header-mob'),
+        $headerDesk = $('.header-desk'),
+        $authBlock = $('.auth-block'),
+        $menuItem = $('.menu a'),
+        $startSectionButton = $('.start-section-greating button'), // Should be removed later
+        $location = $('#location'),
+        $duration = $('.duration input'),
+        $persons = $('.persons input'),
+        $searchHotelField = $('.search-form input[type="text"]'),
+        $searchHotelBtn = $('.search-form input[type="submit"]'),
+        $sendFormErrorTip = $('.send-form-tooltip'),
+        $statusLineItem = $('.status-line-item'),
+        $statusLineContentItem = $('.status-line-content .desc-txt'),
+        $statusSectionButton = $('.status-section button'), // Should be removed later
+        $bookNowBlockButton = $('.book-now-block button'), // Should be removed later
+        $blogBtn = $('.blog-btn'),
+        $tourBookSectionButton = $('.tour-book-section button'), // Should be removed later
+        $customerSliderWrap = $('.slider-wrap'),
+        searchLocationReg = /(^([a-zA-Z]+[ '-][a-zA-Z]+[ '-][a-zA-Z]+$)|^([a-zA-Z]+[ '-][a-zA-Z]+$)|^[a-zA-Z]+$)/gm,
+        searchDateReg = /^\d{2}[ \/\.-]\d{2}[ \/\.-]\d{4}/gm,
+        searchPersonReg = /^\d+$/gm;
 
   var searchHotelObj = {
         location: '',
@@ -142,6 +147,13 @@
 
       $bodyHtml.stop().animate({scrollTop:anchorElemTop - headerDeskHeight}, 1000);
     }
+  });
+
+  /** Main banner action button **/ // Should be removed later
+  $startSectionButton.on('click', function (e) {
+    e.preventDefault();
+
+    alert('e.g. Should be redirect to the main site main page');
   });
 
   /** Search form validation **/
@@ -283,6 +295,69 @@
       $statusLineContentItem.addClass('hide');
       $('.status-line-content .desc-txt[data-id="' + thisId + '"]').removeClass('hide');
     }
+  });
+
+  /** Status section action button **/ // Should be removed later
+  $statusSectionButton.on('click', function (e) {
+    e.preventDefault();
+
+    alert('e.g. Should be redirect to the main site status page');
+  });
+
+  /** Best deals action button **/ // Should be removed later
+  $bookNowBlockButton.on('click', function (e) {
+    e.preventDefault();
+
+    var $bookNowBlockButtonParrent = $(this).closest('.book-now-block'),
+        $bookNowBlockButtonPrice = $('.deal-price', $bookNowBlockButtonParrent).text();
+
+    alert('e.g. Should be redirect to the main site book page for ' + $bookNowBlockButtonPrice + ' price');
+  });
+
+  /** Show blog popup **/
+  $blogBtn.on('click', function () {
+    var $blogBtnParent = $(this).closest('.grid-item'),
+        thisBlogImgSrc = $('img', $blogBtnParent).attr('src'),
+        thisBlogTitleText = $('.blog-title', $blogBtnParent).html(),
+        blogDataContent = $('.desc-txt', $blogBtnParent).attr('data-content'),
+        $popupBlogElem = '<div class="popup-blog-content-wrap">' +
+                        '<div class="popup-blog-content">' +
+                        '<div class="close-blog-popup">close</div>' +
+                        '<p class="popup-blog-title">' + thisBlogTitleText + '</p>' +
+                        '<img src="' + thisBlogImgSrc + '">' +
+                        '<p class="popup-blog-text">' + blogDataContent + '' +
+                        '<span class="fake-end">fake end</span>' +
+                        '</p>' +
+                        '<button>read more</button>' +
+                        '</div>' +
+                        '</div>';
+
+    $body.addClass('no-scroll blog-blur').append($popupBlogElem);
+
+    // Close popup function
+    function closeBlogPopup () {
+      $('.popup-blog-content-wrap').remove();
+      $body.removeClass('no-scroll blog-blur');
+    }
+
+    $('.close-blog-popup').on('click', function () {
+      closeBlogPopup();
+    });
+
+    $(window).on('resize orientationchange', function () {
+      closeBlogPopup();
+    });
+
+    $('.popup-blog-content button').on('click', function () {
+      alert('e.g. Should be redirect to this blog page on the main site');
+    })
+  });
+
+  /** Another one book action button **/ // Should be removed later
+  $tourBookSectionButton.on('click', function (e) {
+    e.preventDefault();
+
+    alert('e.g. Should be redirect to the main site another one book page');
   });
 
   /** Slick plugin **/
